@@ -24,35 +24,49 @@ fetch(gioventuBruciata, {
     console.log("Error:", error);
   });
 
+// Funzione per visualizzare l'album e le tracce
 const displayAlbum = (data) => {
   const row = document.getElementById("displayAlbum");
   row.innerHTML = `
-      <div class="album-header d-flex align-items-center p-4">
-          <img src="${data.cover_big}" class="album-cover me-3" alt="${
-    data.title
-  }">
-          <div>
-              <h2>${data.title}</h2>
-              <ul class="list-group">
-                  ${data.tracks.data
-                    .map(
-                      (track, index) => `
-                      <li class="list-group-item w-100 text-white d-flex justify-content-between align-items-center"
-                          style="background-color: #21160F; border: none;">
-                          <span>${index + 1}. ${track.title}</span>
-                          <span>${Math.floor(track.duration / 60)}:${(
-                        track.duration % 60
-                      )
-                        .toString()
-                        .padStart(2, "0")}</span>
-                      </li>
-                  `
-                    )
-                    .join("")}
-              </ul>
-          </div>
+    <div class="pb-3 bg-primary bg-gradient">
+      <div class="row align-items-center">
+        <!-- Colonna sinistra con l'immagine dell'album -->
+        <div class="col-md-4">
+          <img src="${
+            data.cover_medium
+          }" class="album-cover img-fluid py-2" alt="${data.title}"
+          >
+        </div>
+  
+        <!-- Colonna destra con il titolo dell'album -->
+        <div class="col-md-8">
+          <h2 class="text-white display-4 album-title">${data.title}</h2>
+          <h5 class= "text-white display-4 album-title fs-6">${
+            data.artist.name
+          }</h5>
+          <h5 class= "text-white display-4 album-title fs-6">${
+            data.release_date
+          }</h5>
+        </div>
       </div>
-    `;
-};
+    </div>
 
-displayAlbum();
+    <div class="mt-4">
+      <ul class="list-group">
+        ${data.tracks.data
+          .map(
+            (track, index) => `
+              <li class="list-group-item w-100 text-white d-flex justify-content-between align-items-center "
+                  style="background-color: #21160F; border: none;">
+                <span>${index + 1}. ${track.title}</span>
+                <span>${Math.floor(track.duration / 60)}:${(track.duration % 60)
+              .toString()
+              .padStart(2, "0")}</span>
+              </li>
+            `
+          )
+          .join("")}
+      </ul>
+    </div>
+  `;
+};
