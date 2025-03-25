@@ -67,8 +67,17 @@ const getAlbum = function (id) {
             `
 
 
-            //crea card con song nel footer in basso a sinistra
-            // sarebbe carino che pescasse una caonze a caso per album selezionato
+            /* FOOTER */
+            // sarebbe carino che pescasse una caonze a caso per album selezionato, per ora ne seleziona una sola
+
+
+            const footerImg = document.getElementById('image-footer')
+            const songName = document.getElementById('song-name')
+            const artistName = document.getElementById('artist-name')
+
+            footerImg.src = album.cover_big  // album.tracks.data[0].md5_image non trovo l'img della canzone
+            songName.innerText = album.tracks.data[0].title  
+            artistName.innerText = album.tracks.data[0].artist.name  
 
 
     })
@@ -88,3 +97,7 @@ const arrayAlbumsAndSong = [
 ]
 
 //quando premi avanti e idietro nel carosello deve cambiare album di nuovo a random
+
+// album.tracks.data[0].title ---- album.tracks.data[0].artist.name
+
+
