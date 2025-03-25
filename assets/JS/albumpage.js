@@ -28,28 +28,29 @@ fetch(gioventuBruciata, {
 const displayAlbum = (data) => {
   const row = document.getElementById("displayAlbum");
   row.innerHTML = `
-    <div class="pb-3 bg-primary bg-gradient">
-      <div class="row align-items-center">
-        <!-- Colonna sinistra con l'immagine dell'album -->
-        <div class="col-md-4">
-          <img src="${
-            data.cover_medium
-          }" class="album-cover img-fluid py-2" alt="${data.title}"
-          >
-        </div>
-  
-        <!-- Colonna destra con il titolo dell'album -->
-        <div class="col-md-8">
-          <h2 class="text-white display-4 album-title">${data.title}</h2>
-          <h5 class= "text-white display-4 album-title fs-6">${
-            data.artist.name
-          }</h5>
-          <h5 class= "text-white display-4 album-title fs-6">${
-            data.release_date
-          }</h5>
-        </div>
-      </div>
+   <div class="pb-3 bg-primary bg-gradient">
+  <div class="row align-items-center">
+    <!-- Colonna sinistra con l'immagine dell'album -->
+    <div class="col-md-4">
+      <img src="${data.cover_medium}" class="album-cover img-fluid py-2" alt="${
+    data.title
+  }">
     </div>
+
+    <!-- Colonna destra con il titolo animato -->
+    <div class="col-md-8 d-flex flex-column">
+      <div class="album-title-container">
+        <h2 class="text-white display-4 album-font album-title">${
+          data.title
+        }</h2>
+      </div>
+      <h5 class="text-white fs-5 text-start">${data.artist.name}</h5>
+      <h5 class="text-white fs-5 text-start">${data.release_date}</h5>
+    </div>
+  </div>
+</div>
+
+
 
     <div class="mt-4">
       <ul class="list-group">

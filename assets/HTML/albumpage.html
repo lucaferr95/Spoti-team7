@@ -22,7 +22,42 @@
       .altezza-div {
         height: 500px;
       }
-    </style>
+
+  
+      
+    .album-font {
+      font-family: "Circular";
+  src: url(../fonts/CircularStd-Medium.otf);
+  font-weight: 700;
+  font-style: normal;
+    }
+  
+      .album-title-container {
+    overflow: hidden;  /* Nasconde il testo fuori dalla colonna */
+    position: relative; 
+    width: 100%;
+    white-space: nowrap;
+}
+
+.album-title {
+    display: inline-block;
+    will-change: transform;
+    animation: title-animation 10s linear infinite;
+    white-space: nowrap;
+    padding-right: 50px; 
+}
+
+.album-title:hover {
+    animation-play-state: paused;
+}
+
+@keyframes title-animation {
+    from { transform: translateX(80%); }  
+    to { transform: translateX(-100%); }  
+}
+    
+
+  </style>
   </head>
   <body class="bg-dark text-white">
     <main>
