@@ -28,9 +28,9 @@
     <main class="flex-grow-1">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 col-lg-2 small">
             <nav
-              class="nav flex-column d-none d-sm-block border-bottom border-1"
+              class="nav flex-column d-none d-sm-block border-bottom border-1 small"
             >
               <a class="nav-link active text-white" aria-current="page" href="#"
                 ><i class="fas fa-ellipsis-h text-white"></i
@@ -91,9 +91,255 @@
               <p><small>Ciao</small></p>
             </div>
           </div>
-          <div class="col-6 col-md-6 bg-dark"></div>
+          <!--inizio col centrale-->
+          <div class="col-12 col-md-6 bg-dark col-lg-8">
+            <div class="row m-1 justify-content-between">
+              <div class="col-6 ps-0">
+                <i class="fas fa-chevron-circle-left text-white-50"></i>
+                <i class="fas fa-chevron-circle-right text-white-50"></i>
+              </div>
+              <div class="col-6 text-end">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      width="20"
+                      src="../imgs/search/image-11.jpg"
+                      class="rounded-circle me-1"
+                    />
+                    Lidia nautilus...
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Cambia account</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row bg-black bg-gradient m-1 justify-content-center">
+              <div class="col-12 col-md-3 align-content-start text-center py-3">
+                <img id="img-album" src="" class="img-fluid" />
+              </div>
+              <div class="col-12 col-md-6 small">
+                <p class="small pt-1 mb-2">ALBUM</p>
+                <h1 class="fs-3" id="album-name"></h1>
+                <p class="mb-2" id="artist-album-name"></p>
+                <p>
+                  Ascolta il nuovo singolo di
+                  <span id="span-artist-name"></span>!
+                </p>
+                <div id="buttons" class="mb-2">
+                  <button
+                    class="btn btn-sm btn-success text-black rounded-pill fw-bold me-2"
+                  >
+                    Play
+                  </button>
+                  <button
+                    class="btn btn-sm btn-dark rounded-pill border border-white me-3 fw-bold"
+                  >
+                    Salva</button
+                  ><i class="fas fa-ellipsis-h text-white"></i>
+                </div>
+              </div>
+              <div class="col-12 col-md-3 text-start small px-0">
+                <p
+                  class="badge rounded-pill text-wrap text-bg-dark text-white-50 small mx-2 pt-1"
+                >
+                  NASCONDI ANNUNCI
+                </p>
+              </div>
+            </div>
+            <div class="row px-1 pt-3 justify-content-start g-2">
+              <h2 class="fs-4">Buonasera</h2>
 
-          <div class="col-12 col-md-3 pt-3">
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row rounded">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-19.jpg"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>early stage emily syndrome (sett-ott 2022)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row rounded">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-13.jpg"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>Be The Young</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-19.jpg"
+                      class="img-fluid rounded ps-0"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>early stage emily syndrome (sett-ott 2022)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row px-1 pt-3 justify-content-start g-2">
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row rounded">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-19.jpg"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>early stage emily syndrome (sett-ott 2022)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row rounded">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-13.jpg"
+                      class="img-fluid rounded"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>Be The Young</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-10 col-lg-4 bg-dark bg-gradient rounded"
+              >
+                <div class="row">
+                  <div class="col-md-3 col-lg-4 pe-0">
+                    <img
+                      src="../imgs/main/image-19.jpg"
+                      class="img-fluid rounded ps-0"
+                    />
+                  </div>
+                  <div
+                    class="col-md-9 col-lg-8 ps-1 small align-content-center"
+                  >
+                    <p>
+                      <small>early stage emily syndrome (sett-ott 2022)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row px-1 pt-3 justify-content-start g-2">
+              <div class="col-6">
+                <h3 class="fs-5 pt-4">Altro di ciò che ti piace</h3>
+              </div>
+              <div class="col-6 small text-end">
+                <p class="pt-4 text-white-50 small fw-bold">
+                  <small>VISUALIZZA TUTTO</small>
+                </p>
+              </div>
+            </div>
+            <div class="row px-1 pt-3 justify-content-around g-3">
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-4 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--fine col centrale-->
+          <div class="col-12 col-md-3 pt-3 col-lg-2 small">
             <div class="row">
               <div class="d-flex justify-content-between">
                 <h6 class="text-white">Attività amici</h6>
@@ -179,11 +425,11 @@
           <div class="col-md-3">
             <div class="row pt-2 pe-0">
               <div class="col-md-3 justify-content-center">
-                <img src="../imgs/main/image-10.jpg" class="img-fluid" />
+                <img src="" id="image-footer" class="img-fluid" />
               </div>
               <div class="col-md-6">
-                <p class="fw-bold text-white-50 small mb-1">Fat Funny Friend</p>
-                <p class="small text-white-50 mb-1">Maddie Zham</p>
+                <p id="song-name" class="fw-bold text-white-50 small mb-1"></p>
+                <p id="artist-name" class="small text-white-50 mb-1"></p>
               </div>
               <div class="col-md-3 pe-0 align-content-center">
                 <i class="far fa-heart"></i>
