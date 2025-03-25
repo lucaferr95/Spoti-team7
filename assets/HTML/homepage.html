@@ -123,13 +123,16 @@
             </div>
             <div class="row bg-black bg-gradient m-1 justify-content-center">
               <div class="col-12 col-md-3 align-content-start text-center py-3">
-                <img src="../imgs/main/image-12.jpg" class="img-fluid" />
+                <img id="img-album" src="" class="img-fluid" />
               </div>
               <div class="col-12 col-md-6 small">
                 <p class="small pt-1 mb-2">ALBUM</p>
-                <h1 class="fs-3">VIOLA (feat. Salmo)</h1>
-                <p class="mb-2">Fedez, Salmo</p>
-                <p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
+                <h1 class="fs-3" id="album-name"></h1>
+                <p class="mb-2" id="artist-album-name"></p>
+                <p>
+                  Ascolta il nuovo singolo di
+                  <span id="span-artist-name"></span>!
+                </p>
                 <div id="buttons" class="mb-2">
                   <button
                     class="btn btn-sm btn-success text-black rounded-pill fw-bold me-2"
@@ -422,11 +425,11 @@
           <div class="col-md-3">
             <div class="row pt-2 pe-0">
               <div class="col-md-3 justify-content-center">
-                <img src="../imgs/main/image-10.jpg" class="img-fluid" />
+                <img src="" id="image-footer" class="img-fluid" />
               </div>
               <div class="col-md-6">
-                <p class="fw-bold text-white-50 small mb-1">Fat Funny Friend</p>
-                <p class="small text-white-50 mb-1">Maddie Zham</p>
+                <p id="song-name" class="fw-bold text-white-50 small mb-1"></p>
+                <p id="artist-name" class="small text-white-50 mb-1"></p>
               </div>
               <div class="col-md-3 pe-0 align-content-center">
                 <i class="far fa-heart"></i>
