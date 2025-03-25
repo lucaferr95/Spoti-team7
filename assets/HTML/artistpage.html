@@ -23,7 +23,7 @@
     <main class="flex-grow-1">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 col-lg-3">
             <nav
               class="nav flex-column d-none d-sm-block border-bottom border-1"
             >
@@ -86,9 +86,185 @@
               <p><small>Ciao</small></p>
             </div>
           </div>
-          <div class="col-6 col-md-6 bg-dark"></div>
+          <!--colonna centrale-->
+          <div class="col-12 col-md-6 bg-dark col-lg-7 pe-0">
+            <!--divo con bg img-->
+            <div
+              class="row m-0 justify-content-between imgcover"
+              id="artist-picture"
+            >
+              <div class="col-6 ps-0">
+                <i class="fas fa-chevron-circle-left text-white-50"></i>
+                <i class="fas fa-chevron-circle-right text-white-50"></i>
+              </div>
+              <div class="col-6 text-end">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      width="20"
+                      src="../imgs/search/image-11.jpg"
+                      class="rounded-circle me-1"
+                    />
+                    Lidia nautilus...
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Cambia account</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-auto">
+                <p class="my-0">
+                  <i class="fas fa-certificate pe-1"></i>Artista verificato
+                </p>
+                <h2 class="fs-1" id="artist-name">Yellocard</h2>
+                <p class="my-0" id="artist-fans">ascoltatori mensili</p>
+              </div>
+            </div>
+            <!--div con tracce-->
+            <div class="px-3 py-2">
+              <!--div bottoni-->
+              <div id="buttons" class="mb-2">
+                <button
+                  class="btn btn-sm btn-success text-black rounded-pill fw-bold me-2"
+                >
+                  Play
+                </button>
+                <button
+                  class="btn btn-sm btn-dark border border-white me-3 fw-bold"
+                >
+                  Following</button
+                ><i class="fas fa-ellipsis-h text-white"></i>
+              </div>
+              <div class="row pt-4 py-2">
+                <div class="col-7">
+                  <h5>Popolari</h5>
+                  <!--card 1-->
+                  <div class="row py-2">
+                    <div class="row small">
+                      <div class="col-6">
+                        <span>1</span
+                        ><img
+                          src="../imgs/search/image-18.jpg"
+                          alt=""
+                          width="38"
+                          class="ps-1"
+                        />
+                        <span class="flex-grow-1">Ocean avenue</span>
+                      </div>
+                      <div class="col-3 small pt-1">numero ascolti</div>
 
-          <div class="col-12 col-md-3 pt-3">
+                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
+                    </div>
+                  </div>
+                  <!--card 1-->
+                  <div class="row py-2">
+                    <div class="row small">
+                      <div class="col-6">
+                        <span>1</span
+                        ><img
+                          src="../imgs/search/image-18.jpg"
+                          alt=""
+                          width="38"
+                          class="ps-1"
+                        />
+                        <span class="flex-grow-1">Ocean avenue</span>
+                      </div>
+                      <div class="col-3 small pt-1">numero ascolti</div>
+
+                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
+                    </div>
+                  </div>
+                  <!--card 1-->
+                  <div class="row py-2">
+                    <div class="row small">
+                      <div class="col-6">
+                        <span>1</span
+                        ><img
+                          src="../imgs/search/image-18.jpg"
+                          alt=""
+                          width="38"
+                          class="ps-1"
+                        />
+                        <span class="flex-grow-1">Ocean avenue</span>
+                      </div>
+                      <div class="col-3 small pt-1">numero ascolti</div>
+
+                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
+                    </div>
+                  </div>
+                  <!--card 1-->
+                  <div class="row py-2">
+                    <div class="row small">
+                      <div class="col-6">
+                        <span>1</span
+                        ><img
+                          src="../imgs/search/image-18.jpg"
+                          alt=""
+                          width="38"
+                          class="ps-1"
+                        />
+                        <span class="flex-grow-1">Ocean avenue</span>
+                      </div>
+                      <div class="col-3 small pt-1">numero ascolti</div>
+
+                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
+                    </div>
+                  </div>
+                  <!--card 1-->
+                  <div class="row py-2">
+                    <div class="row small">
+                      <div class="col-6">
+                        <span>1</span
+                        ><img
+                          src="../imgs/search/image-18.jpg"
+                          alt=""
+                          width="38"
+                          class="ps-1"
+                        />
+                        <span class="flex-grow-1">Ocean avenue</span>
+                      </div>
+                      <div class="col-3 small pt-1">numero ascolti</div>
+
+                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
+                    </div>
+                  </div>
+                  <div>visualizza altro</div>
+                </div>
+                <!--colonna di destra centrale-->
+                <div class="col-5">
+                  <h5 class="pb-2">Brani che ti piacciono</h5>
+                  <!--div card-->
+                  <div class="row small">
+                    <!--colonna con img-->
+                    <div class="col-3 small">
+                      <img
+                        src="../imgs/main/image-19.jpg"
+                        alt=""
+                        class="rounded-circle"
+                        width="48"
+                      />
+                    </div>
+                    <!--div con info-->
+                    <div class="col-9 small">
+                      <div class="small fw-bold pb-1">
+                        hai messo mi piace a 11 brani di
+                      </div>
+                      <div id="" class="small">Di Yellowcard</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--colonna di destra-->
+          <div class="col-12 col-md-3 col-lg-2 pt-3">
             <div class="row">
               <div class="d-flex justify-content-between">
                 <h6 class="text-white">Attività amici</h6>
