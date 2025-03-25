@@ -31,8 +31,37 @@ const displayAlbum = (data) => {
    <div class="pb-3 bg-primary bg-gradient">
   <div class="row align-items-center">
     <!-- Colonna sinistra con l'immagine dell'album -->
-    <div class="col-md-4">
-      <img src="${data.cover_medium}" class="album-cover img-fluid py-2" alt="${
+  
+    <div class="row m-1 justify-content-between">
+              <div class="col-6 ps-0 fs-3 text-start ps-4 ">
+                <i class="fas fa-chevron-circle-left   text-black"></i>
+                <i class="fas fa-chevron-circle-right text-black"></i>
+              </div>
+              <div class="col-6 text-end">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      width="20"
+                      src="../imgs/search/image-11.jpg"
+                      class="rounded-circle me-1"
+                    />
+                    Lidia nautilus...
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">Cambia account</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  <div class="col-md-4">
+      <img src="${data.cover_medium}" class="album-cover img-fluid py-5" alt="${
     data.title
   }">
     </div>
