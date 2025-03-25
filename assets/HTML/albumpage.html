@@ -23,49 +23,49 @@
         height: 500px;
       }
 
-  
-      
-    .album-font {
-      font-family: "Circular";
-  src: url(../fonts/CircularStd-Medium.otf);
-  font-weight: 700;
-  font-style: normal;
-    }
-  
+      .album-font {
+        font-family: "Circular";
+        src: url(../fonts/CircularStd-Medium.otf);
+        font-weight: 500;
+        font-style: normal;
+      }
       .album-title-container {
-    overflow: hidden;  /* Nasconde il testo fuori dalla colonna */
-    position: relative; 
-    width: 100%;
-    white-space: nowrap;
-}
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+      }
 
-.album-title {
-    display: inline-block;
-    will-change: transform;
-    animation: title-animation 10s linear infinite;
-    white-space: nowrap;
-    padding-right: 50px; 
-}
+      .album-title {
+        display: inline-block;
+        position: relative;
+        width: max-content;
+        animation: album-title 3s linear infinite alternate;
+      }
 
-.album-title:hover {
-    animation-play-state: paused;
-}
+      .album-title:hover {
+        animation-play-state: paused;
+      }
 
-@keyframes title-animation {
-    from { transform: translateX(80%); }  
-    to { transform: translateX(-100%); }  
-}
-    
-
-  </style>
+      @keyframes album-title {
+        0% {
+          transform: translateX(50%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+    </style>
   </head>
-  <body class="bg-black text-white min-vh-100 d-flex flex-column">
-    <main class="flex-grow-1">
-      <div class="container-fluid pt-3">
+  <body class="bg-black min-vh-100 d-flex flex-column text-white">
+   
+      <main class="flex-grow-1">
+
+      <div class="container-fluid ">
         <div class="row">
-          <div class="col-6 col-md-3">
+          <div class="col-6 col-md-3 col-lg-2 small">
             <nav
-              class="nav flex-column d-none d-sm-block border-bottom border-1"
+              class="nav flex-column d-none d-sm-block border-bottom border-1 small"
             >
               <a class="nav-link active text-white" aria-current="page" href="#"
                 ><i class="fas fa-ellipsis-h text-white"></i
@@ -126,20 +126,19 @@
               <p class="mb-1"><small>Culo 2021</small></p>
               <p class="mb-1"><small>Frah Quintale Mix</small></p>
               <p class="mb-1"><small>Francesco Guccini Mix</small></p>
-              
-            </div>
+          </div>
           </div>
           <!-- Contenuto centrale -->
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 bg-dark col-lg-8">
             <div id="displayAlbum" class="text-center">
               <!-- Qui verrà inserito l'album -->
-
-
-
-            </div>
+         </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div id="displayAlbum" class="container"></div>
           </div>
 
-          <div class="col-12 col-md-3 pt-3">
+          <div class="col-12 col-md-3 col-lg-2 small pt-3">
             <div class="row">
               <div class="d-flex justify-content-between">
                 <h6 class="text-white">Attività amici</h6>
@@ -148,7 +147,7 @@
                   <i class="fas fa-times fs-5"></i>
                 </div>
               </div>
-              <div class="row pt-5 pe-1">
+              <div class="row pt-5 pe-0">
                 <div class="col-md-3">
                   <img
                     src="../imgs/main/image-1.jpg"
@@ -217,85 +216,82 @@
         </div>
       </div>
     </main>
-    <footer class="py-1 bg-dark sticky-md-bottom">
+    <footer class="py-1 bg-dark  sticky-md-bottom">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <div class="row pt-2 pe-0">
-              <div class="col-md-3 justify-content-center">
-                <img src="https://www.diregiovani.it/wp-content/uploads/2018/09/MAHMOOD-GIOVENTU-BRUCIATA-1-e1537538846565.jpg" class="img-fluid" />
-              </div>
-              <div class="col-md-6">
-                <p class="fw-bold text-white-50 small mb-1">Soldi</p>
-                <p class="small text-white-50 mb-1">Mahmood</p>
-              </div>
-              <div class="col-md-3 pe-0 align-content-center">
-                <i class="far fa-heart"></i>
+       
+        <div class="row  pt-2 pe-0">
+          <!-- Sezione canzone corrente -->
+          <div class="col-md-3 justify-content-center">
+            <img
+              src="https://i.scdn.co/image/ab67616d00001e02c60b6ec17dcd820b3b6cd380"
+              class="img-fluid me-2"
+              style="width: 100px; height: 100px"
+            />
+            <div>
+              <p class="fw-bold text-white-50 small mb-1">Soldi</p>
+              <p class="small text-white-50 mb-0">Mahmood</p>
+            </div>
+            <i class="far fa-heart ms-3 text-white-50"></i>
+          </div>
+          </div>
+        </div>
+          <!-- Sezione player -->
+          <div class="col-md-6 text-center">
+            <div class="row  justify-content-center ">
+              <div class="col-12 gap-0 column-gap-3 pb-2">
+              <i class="fas fa-random text-success"></i>
+              <i class="fas fa-step-backward"></i>
+              <i class="fas fa-play-circle"></i>
+              <i class="fas fa-step-forward"></i>
+              <i class="fas fa-redo-alt text-success"></i>
+            </div>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+              <span class="small">0:50</span>
+              <div
+                class="progress flex-grow-1 mx-2 bg-secondary"
+                style="height: 5px"
+              >
+                <div class="progress-bar bg-white" style="width: 25%"></div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 text-center">
-            <div class="row justify-content-center fs-2 ">
-              <div class="col-12 gap-0 column-gap-3 pb-2">
-                <i class="fas fa-random text-success"></i>
-                <i class="fas fa-step-backward"></i>
-                <i class="fas fa-play-circle"></i>
-                <i class="fas fa-step-forward"></i>
-                <i class="fas fa-redo-alt text-success"></i>
-              </div>
-            </div>
-            <div class="row align-content-center my-0">
-              <div class="col-2 p-0 text-end">
-                <span class="small">0:50</span>
-              </div>
-              <div class="col-8 pt-1">
-                <div
-                  class="progress bg-secondary"
-                  role="progressbar"
-                  aria-label="Basic example"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="70"
-                >
-                  <div class="progress-bar bg-white w-25"></div>
-                </div>
-              </div>
-              <div class="col-2 p-0 text-start">
-                <span class="small">0:50</span>
-              </div>
-            </div>
-          </div>
+          <!-- Sezione icone a destra -->
           <div
-            class="col-md-3 justify-content-end align-content-center text-start"
+            class="col-md-3 d-flex justify-content-center align-items-center text-start"
           >
-            <div class="row">
-              <div class="col-4 px-0 text-end text-white-50">
-                <i class="fas fa-microphone pe-1"></i>
-                <i class="fas fa-hamburger pe-1"></i>
-                <i class="fas fa-window-restore pe-2"></i>
-              </div>
-              <div class="col-6 px-0">
-                <div class="row">
-                  <div class="col-md-3 text-white-50">
-                    <i class="fas fa-volume-up ps-2"></i>
-                  </div>
-                  <div class="col-md-9 pt-1 px-1">
-                    <div
-                      class="progress bg-secondary"
-                      role="progressbar"
-                      aria-label="Basic example"
-                      aria-valuenow="50"
-                      aria-valuemin="0"
-                      aria-valuemax="70"
-                    >
-                      <div class="progress-bar bg-white w-100"></div>
-                    </div>
+          <div class="row">
+            <div class="col-4 px-0 text-end text-white-50">
+            <i class="fas fa-microphone text-white-50"></i>
+            <i class="fas fa-hamburger text-white-50"></i>
+            <i class="fas fa-window-restore text-white-50"></i>
+          </div>
+
+            <div class="col-6 px-0 ">
+              <div class="row">
+              <div class="col-md-3 text-white-50">
+              <i class="fas fa-volume-up text-white-50 me-2"></i>
+            </div>
+              <div class="col-md-9 pt-1 px-1"></div>
+               <div  class="progress bg-secondary"
+                    role="progressbar"
+                    aria-label="Basic example"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="70"
+                  >
+                    <div class="progress-bar bg-white w-100"></div>
                   </div>
                 </div>
               </div>
-              <div class="col-2">
-                <i class="fas fa-expand-alt ps-1"></i>
+            </div>
+            <div class="col-2">
+              <i class="fas fa-expand-alt ps-1"></i>
+              >
+                
               </div>
             </div>
           </div>
