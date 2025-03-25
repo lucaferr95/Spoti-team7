@@ -56,10 +56,14 @@ const getAlbum = function (id) {
       const footerImg = document.getElementById('image-footer')
       const songName = document.getElementById('song-name')
       const artistName = document.getElementById('artist-name')
+      const hrefAlbumIdFooter = document.getElementById('href-album-name-footer')
+      const hrefArtistIdFooter = document.getElementById('href-artist-name-footer')
       
       footerImg.src = album.cover_big
       songName.innerText = album.tracks.data[0].title  
-      artistName.innerText = album.tracks.data[0].artist.name      
+      artistName.innerText = album.tracks.data[0].artist.name
+      hrefAlbumIdFooter.href = `albumpage.html?id=${album.id}`
+      hrefArtistIdFooter.href = `artistpage.html?id=${album.contributors[0].id}`    
 
     })
     .catch((error) => {
