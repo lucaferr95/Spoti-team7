@@ -30,41 +30,22 @@ const getAlbum = function (id) {
         //hideSpinner()   // spinner se ci interessa
         console.log('oggetto contenente un album', album)
 
-        const emptyRow = document.getElementById('empty-row')
+        //const emptyRow = document.getElementById('empty-row')
 
         //crea card per l'album nel main
-        emptyRow.innerHTML = `
-            <div class="card mb-3 rounded-0 bg-black text-white">
-              <div class="row g-0">
-                <div class="col-md-4 p-3">
-                  <img src=${album.cover_big} class="img-fluid" alt="album cover">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <p>
-                      <small>ALBUM</small>
-                    </p>
-                    <h1 class="card-title">${album.title}</h1>
-                    <p class="card-text">${album.contributors[0].name}</p>
-                     <div class="buttons">
-                       <button class="btn btn-primary rounded-pill bg-success text-black border-0 me-2" type="submit">Play</button>
-                       <button class="btn btn-primary rounded-pill bg-transparent border-white me-2" type="submit">Save</button>
-                       <div class="btn-group">
-                        <button class="btn btn-secondary bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </button>
-                        <ul class="dropdown-menu bg-black">
-                          <li><a class="dropdown-item text-light" href="#">Menu item</a></li>
-                          <li><a class="dropdown-item text-light" href="#">Menu item</a></li>
-                          <li><a class="dropdown-item text-light" href="#">Menu item</a></li>
-                        </ul>
-                      </div>
-                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            `
+      /* CENTER */
+
+      const imgAlbum = document.getElementById('img-album')
+      const albumName = document.getElementById('album-name')
+      const artistAlbumName = document.getElementById('artist-album-name')
+      const spanArtistName = document.getElementById('span-artist-name')
+
+      imgAlbum.src = album.cover_big 
+      albumName.innerText = album.title 
+      artistAlbumName.innerText = album.contributors[0].name
+      spanArtistName.innerText = album.contributors[0].name
+
+
 
 
             /* FOOTER */
@@ -99,5 +80,61 @@ const arrayAlbumsAndSong = [
 //quando premi avanti e idietro nel carosello deve cambiare album di nuovo a random
 
 // album.tracks.data[0].title ---- album.tracks.data[0].artist.name
+
+
+
+
+/* <div class="row px-1 pt-3 justify-content-around g-3">
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-5 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+              <div class="col-12 col-md-4 col-lg-2 bg-dark bg-gradient rounded">
+                <img
+                  src="../imgs/main/image-17.jpg"
+                  class="img-fluid rounded mt-2"
+                />
+                <p><small>Hot Hits Italia</small></p>
+                <p class="text-white-50">
+                  <small>La playlist più calda di qualcosa</small>
+                </p>
+              </div>
+            </div> */
 
 
