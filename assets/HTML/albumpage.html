@@ -56,9 +56,54 @@
       }
     </style>
   </head>
-  <body class="bg-black bg-gradient text-white">
-    <main>
-      <div class="container-fluid pt-3">
+  <header class= "border-bottom-2 border-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-gradient fixed-top border-bottom-2 border-light ">
+    <div class="container-fluid ">
+      <a class="navbar-brand  " href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/800px-Spotify_logo_with_text.svg.png" alt="" srcset="" width="200" height="55" class="d-block"></a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mt-2 fs-4">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="#">Premium</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Assistenza</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item " href="#">Your profile</a></li>
+                <li><a class="dropdown-item" href="#">Change profile</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success me-3" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<body class="bg-black bg-gradient text-white ">
+
+    <main >
+      <div class="container-fluid pt-5 border-top border-3 border-white ">
         <div class="row">
           <div class="col-6 col-md-3">
             <nav
@@ -130,11 +175,11 @@
             </div>
          
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 pt-5">
             <div id="displayAlbum" class="container"></div>
           </div>
 
-          <div class="col-12 col-md-3 pt-3">
+          <div class="col-12 col-md-3 pt-5">
             <div class="row">
               <div class="d-flex justify-content-between">
                 <h6 class="text-white">Attività amici</h6>
@@ -212,7 +257,7 @@
         </div>
       </div>
     </main>
-    <footer class="py-3 bg-dark bg-gradient sticky-md-bottom">
+    <footer class="  bg-dark bg-gradient sticky-md-bottom">
       <div class="container-fluid">
         <div class="row align-items-center py-5">
           <!-- Sezione canzone corrente -->
