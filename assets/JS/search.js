@@ -1,56 +1,60 @@
-const albumAPI = "https://striveschool-api.herokuapp.com/api/deezer/album/"
-const artistAPI = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+const searchAPI = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 
 document.getElementById("searchButton").addEventListener("click", function () {
-  const query = document.getElementById("searchInput").value.trim()
+  let query = document.getElementById("searchInput").value.trim()
 
   if (!query) {
     alert("Inserisci un nome di artista o album!")
     return
   }
 
-  document.getElementById("results").innerHTML = "<p>Caricamento...</p>"
+  // Encode per gestire gli spazi e caratteri speciali
+  query = encodeURIComponent(query)
 
-  // Proviamo a cercare un artista
-  fetch(artistAPI + query)
+  document.getElementById(
+    "results"
+  ).innerHTML = `<div class="spinner-border text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`
+
+  // Eseguiamo la ricerca
+  fetch(searchAPI + query)
     .then((response) => {
-      if (!response.ok) throw new Error("Artista non trovato")
+      if (!response.ok) {
+        throw new Error("Errore nella ricerca")
+      }
       return response.json()
     })
     .then((data) => {
-      displayResults([data], "Artista")
+      document.getElementById("results").innerHTML = "" // Pulisce i risultati
+
+      if (data && data.data.length > 0) {
+        displayResults(data.data)
+      } else {
+        document.getElementById("results").innerHTML =
+          "<p>Nessun risultato trovato.</p>"
+      }
     })
-    .catch(() => {
-      // Se l'artista non esiste, proviamo con l'album
-      fetch(albumAPI + query)
-        .then((response) => {
-          if (!response.ok) throw new Error("Album non trovato")
-          return response.json()
-        })
-        .then((data) => {
-          displayResults([data], "Album")
-        })
-        .catch(() => {
-          document.getElementById("results").innerHTML =
-            "<p>Nessun risultato trovato.</p>"
-        })
+    .catch((error) => {
+      console.error("Errore nella ricerca:", error)
+      document.getElementById("results").innerHTML =
+        "<p>Errore nella ricerca.</p>"
     })
 })
 
 // Funzione per mostrare i risultati
-function displayResults(results, tipo) {
+function displayResults(results) {
   const resultsDiv = document.getElementById("results")
-  resultsDiv.innerHTML = ""
 
-  results.forEach(function (item) {
+  results.forEach((item) => {
     const div = document.createElement("div")
     div.classList.add("result-item")
 
     const img = document.createElement("img")
-    img.src = item.picture_medium || item.cover_medium || "placeholder.jpg"
+    img.src = item.album.cover_medium || "placeholder.jpg"
 
     const name = document.createElement("h3")
-    name.textContent = tipo + ": " + (item.name || item.title)
+    name.textContent = `Titolo: ${item.title} - Artista: ${item.artist.name}`
 
     div.appendChild(img)
     div.appendChild(name)
