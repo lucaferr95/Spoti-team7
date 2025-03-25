@@ -1,0 +1,8 @@
+.altezza-div {
+  height: 500px;
+}
+.imgcover {
+  background-image: url(../imgs/main/image-6.jpg);
+  background-position: cover;
+  width: 100%;
+}
