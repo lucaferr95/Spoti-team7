@@ -31,7 +31,6 @@ const displayAlbum = (data) => {
    <div class="pb-3 bg-primary bg-gradient">
   <div class="row align-items-center">
     <!-- Colonna sinistra con l'immagine dell'album -->
-<<<<<<< Updated upstream
   
     <div class="row m-1 justify-content-between">
               <div class="col-6 ps-0 fs-3 text-start ps-4 ">
@@ -63,10 +62,6 @@ const displayAlbum = (data) => {
             </div>
   <div class="col-md-4">
       <img src="${data.cover_medium}" class="album-cover img-fluid py-5" alt="${
-=======
-    <div class="col-md-4">
-      <img src="${data.cover_medium}" class="album-cover img-fluid py-2" alt="${
->>>>>>> Stashed changes
     data.title
   }">
     </div>
