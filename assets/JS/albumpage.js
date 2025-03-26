@@ -27,7 +27,7 @@ if (eventId) {
 const displayAlbum = (data) => {
   const row = document.getElementById("displayAlbum");
   row.innerHTML = `
-    <div class="pb-3 bg-primary bg-gradient">
+    <div class="pb-3 bg-primary bg-opacity-50 bg-gradient">
       <div class="row align-items-center">
         <div class="row m-1 justify-content-between">
           <div class="col-6 ps-0 fs-3 text-start ps-4">
@@ -38,12 +38,12 @@ const displayAlbum = (data) => {
             <div class="dropdown">
               <button class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
                       type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img width="20" src="IMG_20241012_115436_809.jpg"
+                <img width="20" src="../../IMG_20241012_115436_809.jpg" 
                      class="rounded-circle me-1" />
                 Signor Leo...
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cambia account</a></li>
+                <li><a class="dropdown-item" href="../HTML/profile.html">Cambia account</a></li>
               </ul>
             </div>
           </div>
@@ -56,7 +56,7 @@ const displayAlbum = (data) => {
         <div class="col-md-8 d-flex flex-column">
           <h3 class="text-center text-black text-gradient fs-2"> NOW PLAYING </h3>
           <div class="album-title-container">
-            <h2 class="text-decoration-underline text-opacity-75 display-4 album-font album-title">${
+            <h2 class="text-decoration-underline text-opacity-75 display-4 album-font album-title fs-5 text-wrap">${
               data.title
             }</h2>
           </div>
