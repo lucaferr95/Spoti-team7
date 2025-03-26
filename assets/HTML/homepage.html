@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Spotify Homepage</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,6 +28,7 @@
     <main class="flex-grow-1">
       <div class="container-fluid">
         <div class="row">
+          <!-- ASIDE SINISTRA -->
           <div class="col-6 col-md-3 col-lg-2 small">
             <nav
               class="nav flex-column d-none d-sm-block border-bottom border-1 small"
@@ -38,10 +39,14 @@
               <a class="nav-link active text-white" aria-current="page" href="#"
                 ><i class="fas fa-home text-white pe-2"></i> Home</a
               >
-              <a class="nav-link text-white" href="#"
+
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="./search.html"
                 ><i class="fas fa-search text-white pe-2"></i> Cerca</a
               >
-              <a class="nav-link text-white" href="#"
+              <a class="nav-link text-white" href="/assets/HTML/profile.html"
                 ><i class="fas fa-stream text-white pe-2"></i>La tua libreria</a
               >
 
@@ -112,14 +117,16 @@
                   >
                     <img
                       width="20"
-                      src="../imgs/search/image-11.jpg"
+                      src="/IMG_20241012_115436_809.jpg"
                       class="rounded-circle me-1"
                     />
-                    Lidia nautilus...
+                    Signor Leo...
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">Cambia account</a>
+                      <a class="dropdown-item" href="profile.html"
+                        >Cambia account</a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -345,7 +352,7 @@
             </div>
           </div>
 
-          <!--fine col centrale-->
+          <!--ASIDE DESTRA-->
           <div class="col-12 col-md-3 pt-3 col-lg-2 small">
             <div class="row">
               <div class="d-flex justify-content-between">
@@ -426,102 +433,54 @@
         </div>
       </div>
     </main>
-    <footer class="py-1 bg-dark sticky-md-bottom">
+    <footer class="bg-dark bg-gradient sticky-md-bottom">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="row pt-2 pe-0">
-              <div class="col-md-3 justify-content-center">
-                <img src="" id="image-footer" class="img-fluid" />
+        <div class="row align-items-center py-2">
+          <!-- Sezione canzone corrente -->
+          <div class="col-12 col-md-4 d-flex align-items-center">
+            <img id="image-footer" src="" class="w-25 me-2" />
+            <div>
+              <p id="song-name" class="fw-bold text-white-50 small mb-1"></p>
+              <p id="artist-name" class="small text-white-50 mb-0"></p>
+            </div>
+            <i class="far fa-heart ms-3 text-white-50"></i>
+          </div>
+
+          <!-- Sezione player -->
+          <div class="col-12 col-md-4 text-center">
+            <div class="d-flex justify-content-center gap-2 fs-4">
+              <i class="fas fa-random text-success"></i>
+              <i class="fas fa-step-backward"></i>
+              <i class="fas fa-play-circle"></i>
+              <i class="fas fa-step-forward"></i>
+              <i class="fas fa-redo-alt text-success"></i>
+            </div>
+            <div class="d-flex align-items-center mt-2 fs-3">
+              <span class="small">0:50</span>
+              <div class="progress flex-grow-1 mx-2 bg-secondary">
+                <div class="progress-bar bg-white w-25"></div>
               </div>
-              <div class="col-md-6">
-                <a
-                  href=""
-                  id="href-album-name-footer"
-                  class="fw-bold text-white-50 small text-decoration-none"
-                >
-                  <p
-                    id="song-name"
-                    class="fw-bold text-white-50 small mb-1"
-                  ></p>
-                </a>
-                <a
-                  href=""
-                  id="href-artist-name-footer"
-                  class="text-white-50 small text-decoration-none"
-                >
-                  <p id="artist-name" class="small text-white-50 mb-1"></p>
-                </a>
-              </div>
-              <div class="col-md-3 pe-0 align-content-center">
-                <i class="far fa-heart"></i>
-              </div>
+              <span class="small">3:20</span>
             </div>
           </div>
 
-          <div class="col-md-6 text-center">
-            <div class="row justify-content-center">
-              <div class="col-12 gap-0 column-gap-3 pb-2">
-                <i class="fas fa-random text-success"></i>
-                <i class="fas fa-step-backward"></i>
-                <i class="fas fa-play-circle"></i>
-                <i class="fas fa-step-forward"></i>
-                <i class="fas fa-redo-alt text-success"></i>
-              </div>
-            </div>
-            <div class="row align-content-center my-0">
-              <div class="col-2 p-0 text-end">
-                <span class="small">0:50</span>
-              </div>
-              <div class="col-8 pt-1">
-                <div
-                  class="progress bg-secondary"
-                  role="progressbar"
-                  aria-label="Basic example"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="70"
-                >
-                  <div class="progress-bar bg-white w-25"></div>
-                </div>
-              </div>
-              <div class="col-2 p-0 text-start">
-                <span class="small">0:50</span>
-              </div>
-            </div>
-          </div>
+          <!-- Sezione icone a destra -->
           <div
-            class="col-md-3 justify-content-end align-content-center text-start"
+            class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center gap-2 fs-5"
           >
-            <div class="row">
-              <div class="col-4 px-0 text-end text-white-50">
-                <i class="fas fa-microphone pe-1"></i>
-                <i class="fas fa-hamburger pe-1"></i>
-                <i class="fas fa-window-restore pe-2"></i>
-              </div>
-              <div class="col-6 px-0">
-                <div class="row">
-                  <div class="col-md-3 text-white-50">
-                    <i class="fas fa-volume-up ps-2"></i>
-                  </div>
-                  <div class="col-md-9 pt-1 px-1">
-                    <div
-                      class="progress bg-secondary"
-                      role="progressbar"
-                      aria-label="Basic example"
-                      aria-valuenow="50"
-                      aria-valuemin="0"
-                      aria-valuemax="70"
-                    >
-                      <div class="progress-bar bg-white w-100"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2">
-                <i class="fas fa-expand-alt ps-1"></i>
+            <i class="fas fa-microphone text-white-50"></i>
+            <i class="fas fa-hamburger text-white-50"></i>
+            <i class="fas fa-window-restore text-white-50"></i>
+            <div class="d-flex align-items-center">
+              <i class="fas fa-volume-up text-white-50 me-2"></i>
+              <div
+                class="progress bg-secondary"
+                style="width: 80px; height: 5px"
+              >
+                <div class="progress-bar bg-white w-50"></div>
               </div>
             </div>
+            <i class="fas fa-expand-alt text-white-50"></i>
           </div>
         </div>
       </div>
