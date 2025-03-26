@@ -31,7 +31,6 @@ const displayAlbum = (data) => {
    <div class="pb-3 bg-primary bg-gradient">
   <div class="row align-items-center">
     <!-- Colonna sinistra con l'immagine dell'album -->
-<<<<<<< Updated upstream
   
     <div class="row m-1 justify-content-between">
               <div class="col-6 ps-0 fs-3 text-start ps-4 ">
@@ -62,24 +61,26 @@ const displayAlbum = (data) => {
               </div>
             </div>
   <div class="col-md-4">
-      <img src="${data.cover_medium}" class="album-cover img-fluid py-5" alt="${
-=======
-    <div class="col-md-4">
-      <img src="${data.cover_medium}" class="album-cover img-fluid py-2" alt="${
->>>>>>> Stashed changes
-    data.title
-  }">
+      <img src="${
+        data.cover_medium
+      }" class="album-cover img-fluid py-5 ps-3" alt="${data.title}">
     </div>
 
     <!-- Colonna destra con il titolo animato -->
+    
     <div class="col-md-8 d-flex flex-column">
+    <h3 class= " text-center text-black text-gradient fs-2"> NOW PLAYING </h3>
       <div class="album-title-container">
-        <h2 class="text-white display-4 album-font album-title">${
+        <h2 class="  text-decoration-underline text-opacity-75 display-4 album-font album-title ">${
           data.title
         }</h2>
       </div>
-      <h5 class="text-white fs-5 text-start">${data.artist.name}</h5>
-      <h5 class="text-white fs-5 text-start">${data.release_date}</h5>
+      <h5 class="text-white fs-5 text-start text-white-50">${
+        data.artist.name
+      }</h5>
+      <h5 class="text-white fs-5 text-start text-white-50">${
+        data.release_date
+      }</h5>
     </div>
   </div>
 </div>
