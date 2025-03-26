@@ -291,31 +291,42 @@
     </main>
     <footer class="bg-dark bg-gradient sticky-md-bottom">
       <div class="container-fluid">
-        <div class="row align-items-center py-3">
-          <div class="col-12 col-md-4 d-flex align-items-center">
+        <div class="row align-items-center py-3 d-flex justify-content-between">
+          <div class="col-12 col-md-3 d-flex align-items-center">
             <div class="row pt-2 pe-0">
               <div class="col-md-3 justify-content-center">
-                <img src="" class="img-fluid" id="footer-track-img" />
+                <img
+                  src="https://api.deezer.com/album/9410086/image"
+                  class="img-fluid"
+                  id="footer-track-img"
+                />
               </div>
               <div class="col-md-6" id="">
                 <p
                   class="fw-bold text-white-50 small mb-1"
                   id="footer-track-name"
-                ></p>
-                <p class="d-none" id="footer-artist-name"></p>
-                <p class="small text-white-50 mb-1" id="artist-name2"></p>
+                >
+                  Highway to Hell
+                </p>
+                <p class="d-none" id="footer-artist-name">AC/DC</p>
+                <p
+                  class="small text-white-50 mb-1"
+                  id="artist-name2"
+                  style="color: white"
+                >
+                  AC/DC
+                </p>
               </div>
               <div class="col-md-3 pe-0 align-content-center">
                 <i class="far fa-heart"></i>
               </div>
-              <span class="small">3:20</span>
             </div>
           </div>
 
           <div
-            class="col-12 col-md-4 d-flex justify-content-center align-items-center gap-2 fs-5"
+            class="col-12 col-md-6 justify-content-center align-items-center gap-2 fs-5"
           >
-            <div class="row justify-content-center">
+            <div class="row justify-content-center text-center">
               <div class="col-12 gap-0 column-gap-3 pb-2">
                 <i class="fas fa-random text-success"></i>
                 <i class="fas fa-step-backward"></i>
@@ -324,11 +335,13 @@
                 <i class="fas fa-redo-alt text-success"></i>
               </div>
             </div>
-            <div class="row align-content-center my-0">
+            <div
+              class="row align-content-center flex-grow-1 my-0 d-flex align-items-center mt-2"
+            >
               <div class="col-2 p-0 text-end">
-                <span class="small" id="current-time">0:50</span>
+                <span class="small" id="current-time">0:00</span>
               </div>
-              <div class="col-8 pt-1">
+              <div class="col-8 pt-1 flex-grow-1">
                 <div
                   class="progress bg-secondary"
                   role="progressbar"
@@ -340,12 +353,12 @@
                   <div
                     class="progress-bar bg-white"
                     id="progress-bar"
-                    style="width: 0%"
+                    style="width: 1.82593%"
                   ></div>
                 </div>
               </div>
               <div class="col-2 p-0 text-start">
-                <span class="small" id="total-time">0:50</span>
+                <span class="small" id="total-time">3:26</span>
               </div>
             </div>
           </div>
@@ -380,7 +393,6 @@
                 <i class="fas fa-expand-alt ps-1"></i>
               </div>
             </div>
-            <i class="fas fa-expand-alt text-white-50"></i>
           </div>
         </div>
       </div>
