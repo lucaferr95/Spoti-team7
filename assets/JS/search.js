@@ -45,7 +45,7 @@ function displayResults(results) {
   results.forEach((item) => {
     resultsDiv.innerHTML += `
     
-            <div class="col-12 col-md-6 col-lg-4 pt-4 d-flex align-items-stretch">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 d-flex align-items-stretch">
                 <div class="card mb-3 d-flex flex-column">
                     <img src="${item.album.cover_medium}" class="card-img-top" alt="img di ${item.album.title}">
                     <div class="card-body bg-success bg-opacity-75 bg-gradient text-white d-flex flex-column">
