@@ -8,58 +8,53 @@ document.getElementById("searchButton").addEventListener("click", function () {
     return
   }
 
-  // Encode per gestire gli spazi e caratteri speciali
   query = encodeURIComponent(query)
 
   document.getElementById(
     "results"
-  ).innerHTML = `<div class="spinner-border text-success" role="status">
-  <span class="visually-hidden">Loading...</span>
+  ).innerHTML = `<div class="d-flex justify-content-center">
+  <div class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
 </div>`
 
-  // Ricerca
   fetch(searchAPI + query)
     .then((response) => {
-      if (response.ok) {
-        return response.json()
-      } else {
-        throw new Error("Errore nella ricerca")
-      }
+      if (!response.ok) throw new Error("Errore nella ricerca")
+      return response.json()
     })
     .then((data) => {
-      document.getElementById("results").innerHTML = ""
-
       if (data && data.data.length > 0) {
         displayResults(data.data)
-        console.log(data)
       } else {
         document.getElementById("results").innerHTML =
-          "<p>Nessun risultato trovato.</p>"
+          "<p class='text-center text-danger'>Nessun risultato trovato.</p>"
       }
     })
     .catch((error) => {
       console.error("Errore nella ricerca:", error)
       document.getElementById("results").innerHTML =
-        "<p>Errore nella ricerca.</p>"
+        "<p class='text-center text-danger'>Errore nella ricerca.</p>"
     })
 })
 
-// Funzione per mostrare i risultati
 function displayResults(results) {
   const resultsDiv = document.getElementById("results")
+  resultsDiv.innerHTML = ""
 
   results.forEach((item) => {
-    const div = document.createElement("div")
-    div.classList.add("result-item")
-
-    const img = document.createElement("img")
-    img.src = item.album.cover_medium || "placeholder.jpg"
-
-    const name = document.createElement("h3")
-    name.textContent = `Titolo: ${item.title} - Artista: ${item.artist.name}`
-
-    div.appendChild(img)
-    div.appendChild(name)
-    resultsDiv.appendChild(div)
+    resultsDiv.innerHTML += `
+    
+            <div class="col-12 col-md-6 col-lg-4 pt-4">
+                <div class="card mb-3">
+                    <img src="${item.album.cover_medium}" class="card-img-top" alt="img di ${item.album.title}">
+                    <div class="card-body bg-black bg-opacity-50 bg-gradient text-white">
+                        <h5 class="card-title">${item.title}</h5>
+                        <p class="card-text">Artista: ${item.artist.name}</p>
+                        <button href="${item.link}" target="_blank" class="btn btn-sm btn-success">Ascolta su spotify</button>
+                    </div>
+                </div>
+            </div>
+        `
   })
 }
