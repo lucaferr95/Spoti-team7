@@ -87,11 +87,12 @@
             </div>
           </div>
           <!--colonna centrale-->
-          <div class="col-12 col-md-6 bg-dark col-lg-7 pe-0">
+          <div class="col-12 col-md-6 bg-dark col-lg-7 pe-0" id="artist-div">
             <!--divo con bg img-->
+            <!---->
             <div
               class="row m-0 justify-content-between imgcover"
-              id="artist-picture"
+              id="artist-background"
             >
               <div class="col-6 ps-0">
                 <i class="fas fa-chevron-circle-left text-white-50"></i>
@@ -120,11 +121,11 @@
                 </div>
               </div>
               <div class="mt-auto">
-                <p class="my-0">
+                <p class="my-0" id="verified-artist">
                   <i class="fas fa-certificate pe-1"></i>Artista verificato
                 </p>
-                <h2 class="fs-1" id="artist-name">Yellocard</h2>
-                <p class="my-0" id="artist-fans">ascoltatori mensili</p>
+                <h2 class="fs-1" id="artist-name"></h2>
+                <p class="my-0" id="artist-fans"></p>
               </div>
             </div>
             <!--div con tracce-->
@@ -147,96 +148,21 @@
                 <div class="col-7">
                   <h5>Popolari</h5>
                   <!--card 1-->
-                  <div class="row py-2">
-                    <div class="row small">
-                      <div class="col-6">
-                        <span>1</span
-                        ><img
-                          src="../imgs/search/image-18.jpg"
-                          alt=""
-                          width="38"
-                          class="ps-1"
-                        />
-                        <span class="flex-grow-1">Ocean avenue</span>
-                      </div>
-                      <div class="col-3 small pt-1">numero ascolti</div>
+                  <div id="trackDiv"></div>
 
-                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
-                    </div>
-                  </div>
                   <!--card 1-->
-                  <div class="row py-2">
-                    <div class="row small">
-                      <div class="col-6">
-                        <span>1</span
-                        ><img
-                          src="../imgs/search/image-18.jpg"
-                          alt=""
-                          width="38"
-                          class="ps-1"
-                        />
-                        <span class="flex-grow-1">Ocean avenue</span>
-                      </div>
-                      <div class="col-3 small pt-1">numero ascolti</div>
 
-                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
-                    </div>
-                  </div>
                   <!--card 1-->
-                  <div class="row py-2">
-                    <div class="row small">
-                      <div class="col-6">
-                        <span>1</span
-                        ><img
-                          src="../imgs/search/image-18.jpg"
-                          alt=""
-                          width="38"
-                          class="ps-1"
-                        />
-                        <span class="flex-grow-1">Ocean avenue</span>
-                      </div>
-                      <div class="col-3 small pt-1">numero ascolti</div>
 
-                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
-                    </div>
-                  </div>
                   <!--card 1-->
-                  <div class="row py-2">
-                    <div class="row small">
-                      <div class="col-6">
-                        <span>1</span
-                        ><img
-                          src="../imgs/search/image-18.jpg"
-                          alt=""
-                          width="38"
-                          class="ps-1"
-                        />
-                        <span class="flex-grow-1">Ocean avenue</span>
-                      </div>
-                      <div class="col-3 small pt-1">numero ascolti</div>
 
-                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
-                    </div>
-                  </div>
                   <!--card 1-->
-                  <div class="row py-2">
-                    <div class="row small">
-                      <div class="col-6">
-                        <span>1</span
-                        ><img
-                          src="../imgs/search/image-18.jpg"
-                          alt=""
-                          width="38"
-                          class="ps-1"
-                        />
-                        <span class="flex-grow-1">Ocean avenue</span>
-                      </div>
-                      <div class="col-3 small pt-1">numero ascolti</div>
 
-                      <div class="col-2 small pt-1 pe-0 text-end">2:22</div>
-                    </div>
+                  <div>
+                    <button id="showMoreBtn" class="btn btn-secondary mt-2">
+                      Visualizza altro
+                    </button>
                   </div>
-                  <div>visualizza altro</div>
                 </div>
                 <!--colonna di destra centrale-->
                 <div class="col-5">
@@ -257,7 +183,7 @@
                       <div class="small fw-bold pb-1">
                         hai messo mi piace a 11 brani di
                       </div>
-                      <div id="" class="small">Di Yellowcard</div>
+                      <div id="artist-name1" class="small">Di Yellowcard</div>
                     </div>
                   </div>
                 </div>
@@ -351,11 +277,15 @@
           <div class="col-md-3">
             <div class="row pt-2 pe-0">
               <div class="col-md-3 justify-content-center">
-                <img src="../imgs/main/image-10.jpg" class="img-fluid" />
+                <img src="" class="img-fluid" id="footer-track-img" />
               </div>
-              <div class="col-md-6">
-                <p class="fw-bold text-white-50 small mb-1">Fat Funny Friend</p>
-                <p class="small text-white-50 mb-1">Maddie Zham</p>
+              <div class="col-md-6" id="">
+                <p
+                  class="fw-bold text-white-50 small mb-1"
+                  id="footer-track-name"
+                ></p>
+                <p class="d-none" id="footer-artist-name"></p>
+                <p class="small text-white-50 mb-1" id="artist-name2"></p>
               </div>
               <div class="col-md-3 pe-0 align-content-center">
                 <i class="far fa-heart"></i>
@@ -375,22 +305,26 @@
             </div>
             <div class="row align-content-center my-0">
               <div class="col-2 p-0 text-end">
-                <span class="small">0:50</span>
+                <span class="small" id="current-time">0:50</span>
               </div>
               <div class="col-8 pt-1">
                 <div
                   class="progress bg-secondary"
                   role="progressbar"
                   aria-label="Basic example"
-                  aria-valuenow="50"
                   aria-valuemin="0"
-                  aria-valuemax="70"
+                  aria-valuemax="100"
+                  onclick="seekTrack(event)"
                 >
-                  <div class="progress-bar bg-white w-25"></div>
+                  <div
+                    class="progress-bar bg-white"
+                    id="progress-bar"
+                    style="width: 0%"
+                  ></div>
                 </div>
               </div>
               <div class="col-2 p-0 text-start">
-                <span class="small">0:50</span>
+                <span class="small" id="total-time">0:50</span>
               </div>
             </div>
           </div>
@@ -409,16 +343,15 @@
                     <i class="fas fa-volume-up ps-2"></i>
                   </div>
                   <div class="col-md-9 pt-1 px-1">
-                    <div
-                      class="progress bg-secondary"
-                      role="progressbar"
-                      aria-label="Basic example"
-                      aria-valuenow="50"
-                      aria-valuemin="0"
-                      aria-valuemax="70"
-                    >
-                      <div class="progress-bar bg-white w-100"></div>
-                    </div>
+                    <input
+                      type="range"
+                      id="volume-control"
+                      min="0"
+                      max="100"
+                      step="1"
+                      value="100"
+                      class="form-range"
+                    />
                   </div>
                 </div>
               </div>
@@ -435,6 +368,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <audio id="audioPlayer"></audio>
     <script src="../JS/artistpage.js"></script>
   </body>
 </html>
