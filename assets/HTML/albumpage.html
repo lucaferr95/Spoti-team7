@@ -48,7 +48,7 @@
 
       @keyframes album-title {
         0% {
-          transform: translateX(50%);
+          transform: translateX(20%);
         }
         100% {
           transform: translateX(0%);
@@ -56,206 +56,167 @@
       }
     </style>
   </head>
-  <header class= "border-bottom-2 border-light">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-gradient fixed-top border-bottom-2 border-light ">
-    <div class="container-fluid ">
-      <a class="navbar-brand  " href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Spotify_logo_with_text.svg/800px-Spotify_logo_with_text.svg.png" alt="" srcset="" width="200" height="55" class="d-block"></a>
   
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 mt-2 fs-4">
-            <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="#">Premium</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Assistenza</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-link active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Profile
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item " href="profile.html">Your profile</a></li>
-                <li><a class="dropdown-item" href="profile.html">Change profile</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-              
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success me-3" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
 <body class="bg-black bg-gradient text-white ">
 
     <main >
-      <div class="container-fluid pt-5 border-top border-3 border-white ">
+      <div class="container-fluid ">
         <div class="row">
-          <div class="col-6 col-md-3">
-            <nav
-              class="nav flex-column d-none d-sm-block border-bottom border-1"
-            >
-              <a class="nav-link active text-white" aria-current="page" href="#"
-                ><i class="fas fa-ellipsis-h text-white"></i
-              ></a>
-              <a
-                class="nav-link active text-white"
-                aria-current="page"
-                href="homepage.html"
-                ><i class="fas fa-home text-white pe-2"></i> Home</a
+            <!-- ASIDE SINISTRA -->
+            <div class="col-6 col-md-3 col-lg-2 small">
+              <nav
+                class="nav flex-column d-none d-sm-block border-bottom border-1 small"
               >
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-search text-white pe-2"></i> Cerca</a
+                <a class="nav-link active text-white" aria-current="page" href="#"
+                  ><i class="fas fa-ellipsis-h text-white"></i
+                ></a>
+                <a class="nav-link active text-white" aria-current="page" href="homepage.html"
+                  ><i class="fas fa-home text-white pe-2"></i> Home</a
+                >
+  
+                <a
+                  class="nav-link active text-white"
+                  aria-current="page"
+                  href="./search.html"
+                  ><i class="fas fa-search text-white pe-2"></i> Cerca</a
+                >
+                <a class="nav-link text-white" href="profile.html"
+                  ><i class="fas fa-stream text-white pe-2"></i>La tua libreria</a
+                >
+  
+                <a
+                  class="nav-link active text-white pt-4"
+                  aria-current="page"
+                  href="#"
+                  ><i class="fas fa-plus-square pe-2"></i> Crea playlist</a
+                >
+                <a class="nav-link text-white" href="#"
+                  ><i class="fas fa-heart pe-2"></i> Brani che ti piacciono</a
+                >
+                <a class="nav-link text-white" href="#"
+                  ><i class="fas fa-bookmark pe-2 pb-3"></i> I tuoi episodi</a
+                >
+              </nav>
+              <div
+                class="text-white ps-3 pt-3 overflow-auto altezza-div spy-example d-none d-sm-block"
+                data-bs-spy="scroll"
+                data-bs-target="#simple-list-example"
+                data-bs-offset="0"
+                data-bs-smooth-scroll="true"
+                tabindex="0"
               >
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-stream text-white pe-2"></i>La tua libreria</a
-              >
-
-              <a
-                class="nav-link active text-white pt-4"
-                aria-current="page"
-                href="#"
-                ><i class="fas fa-plus-square pe-2"></i> Crea playlist</a
-              >
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-heart pe-2"></i> Brani che ti piacciono</a
-              >
-              <a class="nav-link text-white" href="#"
-                ><i class="fas fa-bookmark pe-2 pb-3"></i> I tuoi episodi</a
-              >
-            </nav>
-            <div
-              class="text-white ps-3 pt-3 overflow-auto altezza-div spy-example d-none d-sm-block"
-              data-bs-spy="scroll"
-              data-bs-target="#simple-list-example"
-              data-bs-offset="0"
-              data-bs-smooth-scroll="true"
-              tabindex="0"
-            >
-              <p class="mb-1">
-                <small>early stage emily syndrome(sett-ott 2022)</small>
-              </p>
-              <p class="mb-1"><small>Be The Young</small></p>
-             <p class="mb-1"><small>"..."cit. Kimiko(lug-ago2022)</small>
-              </p>
-              <p class="mb-1"><small>saggio vibes&#128131; &#129430; &#127870; </small></p>
-                  
-              <p class="mb-1">
-                <small>main character energy(mag-giu2022)</small>
-              </p>
-              <p class="mb-1"><small>that fucking mood  &#128298 <i class="fa fa-guitar text-secondary"></i></small></p>
-              <p class="mb-1"><small>VEE,CARLOTTA E GIACOMO VANNO A BOSIO</small></p>
-              <p class="mb-1"><small>An Emily Winchester kind of mood  &#128298 &#128131;</small></p>
-              <p class="mb-1"><small>landing page(mar-apr 2022)<i class="fas fa-arrow-down text-secondary"></i></small></p>
-              <p class="mb-1"><small>2021 Iol</small></p>
-              <p class="mb-1"><small>cosa cazzo vuol dire questa affermazione(gen-feb...)<i class="fas fa-arrow-down text-secondary fs-0"></i></small></p>
-              <p class="mb-1"><small>honey and glass(nov-dic 2021)</small></p>
-              <p class="mb-1"><small>(Revenge) Training Arc <i class="fas fa-dragon text-secondary"></i></small></p>
-              <p class="mb-1"><small>Lidia <i class="fas fa-heart text-warning"></i> Emily </small></p>
-              <p class="mb-1"><small>minecraft e nintendo switch (sep-oct 2021)</small></p>
-             <p class="mb-1"><small>silvano d'orba? I hardly know her(lug-ago2021)</small></p>
-              <p class="mb-1"><small>Culo 2021</small></p>
-              <p class="mb-1"><small>Frah Quintale Mix</small></p>
-              <p class="mb-1"><small>Francesco Guccini Mix</small></p>
-              
+                <p class="mb-1">
+                  <small>early stage emily syndrome (sett-ott 2022)</small>
+                </p>
+                <p class="mb-1"><small>Be The Young</small></p>
+                <p class="mb-1">
+                  <small>saggio vibes &#128131; &#129430; &#127870;</small>
+                </p>
+                <p class="mb-1"><small>Francesco Guccini Mix</small></p>
+                <p class="mb-1">
+                  <small>main character energy (mag-giu 2022)</small>
+                </p>
+                <p class="mb-1"><small>That fucking mood &#128298;</small></p>
+                <p class="mb-1"><small>Honey mood &#127855;</small></p>
+                <p class="mb-1">
+                  <small>Sad mood, need food &#127856;</small>
+                </p>
+                <p class="mb-1"><small>System of a down Mix</small></p>
+                <p class="mb-1"><small>Nora Jhones on a bus</small></p>
+                <p class="mb-1"><small>All you need is RELAX</small></p>
+                <p class="mb-1"><small>Happy song mix</small></p>
+                <p class="mb-1"><small>Thom Yorke mood</small></p>
+                <p class="mb-1"><small>Blues mix</small></p>
+                <p class="mb-1"><small>Rock your body &#128131;</small></p>
+                <p class="mb-1"><small>Pink Mix</small></p>
+                <p class="mb-1"><small>Podcast time</small></p>
+                <p class="mb-1"><small>Crime stories</small></p>
+                <p class="mb-1"><small>The Beatles mix</small></p>
+              </div>
             </div>
-         
-          </div>
-          <div class="col-12 col-md-6 pt-5">
+            <!--inizio col centrale-->
+          <div class="col-12 col-md-6 col-lg-8 pt-2">
             <div id="displayAlbum" class="container"></div>
           </div>
 
-          <div class="col-12 col-md-3 pt-5">
-            <div class="row">
-              <div class="d-flex justify-content-between">
-                <h6 class="text-white">Attività amici</h6>
-                <div class="icon">
-                  <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
-                  <i class="fas fa-times fs-5"></i>
-                </div>
+         <!--ASIDE DESTRA-->
+         <div class="col-12 col-md-3 pt-3 col-lg-2 small">
+          <div class="row">
+            <div class="d-flex justify-content-between">
+              <h6 class="text-white">Attività amici</h6>
+              <div class="icon">
+                <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
+                <i class="fas fa-times fs-5"></i>
               </div>
-              <div class="row pt-5 pe-1">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-              <div class="row pt-5 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-              <div class="row pt-4 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-             </div>
+            </div>
+            <div class="row pt-5 pe-0">
+              <div class="col-md-3">
+                <img
+                  src="../imgs/main/image-1.jpg"
+                  class="img-fluid rounded-circle"
+                />
+              </div>
+              <div class="col-md-6">
+                <p class="fw-bold text-white-50 small mb-1">
+                  Charlie Hookham
+                </p>
+                <p class="small text-white-50 mb-1">
+                  In camera &#183; Yumi Zouma
+                </p>
+                <p class="small text-white-50 mb-1">
+                  <i class="far fa-dot-circle"></i> EP III
+                </p>
+              </div>
+              <div class="col-md-3 pe-0">
+                <p class="small text-end text-white-50">4 ore</p>
+              </div>
+            </div>
+            <div class="row pt-4 pe-0">
+              <div class="col-md-3">
+                <img
+                  src="../imgs/main/image-1.jpg"
+                  class="img-fluid rounded-circle"
+                />
+              </div>
+              <div class="col-md-6">
+                <p class="fw-bold text-white-50 small mb-1">
+                  Charlie Hookham
+                </p>
+                <p class="small text-white-50 mb-1">
+                  In camera &#183; Yumi Zouma
+                </p>
+                <p class="small text-white-50 mb-1">
+                  <i class="far fa-dot-circle"></i> EP III
+                </p>
+              </div>
+              <div class="col-md-3 pe-0">
+                <p class="small text-end text-white-50">4 ore</p>
+              </div>
+            </div>
+            <div class="row pt-4 pe-0">
+              <div class="col-md-3">
+                <img
+                  src="../imgs/main/image-1.jpg"
+                  class="img-fluid rounded-circle"
+                />
+              </div>
+              <div class="col-md-6">
+                <p class="fw-bold text-white-50 small mb-1">
+                  Charlie Hookham
+                </p>
+                <p class="small text-white-50 mb-1">
+                  In camera &#183; Yumi Zouma
+                </p>
+                <p class="small text-white-50 mb-1">
+                  <i class="far fa-dot-circle"></i> EP III
+                </p>
+              </div>
+              <div class="col-md-3 pe-0">
+                <p class="small text-end text-white-50">4 ore</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </main>
     <footer class="bg-dark bg-gradient sticky-md-bottom ">
       <div class="container-fluid">
