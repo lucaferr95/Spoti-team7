@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Spotify - Search</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,6 +21,11 @@
     <style>
       .altezza-div {
         height: 500px;
+      }
+
+      #show-more {
+        display: none;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -134,9 +139,9 @@
                 </div>
               </div>
             </div>
-            <div class="row px-3 pt-2 justify-content-start g-2">
-              <div class="col-6 col-md-8">
-                <h2 class="fs-3 pt-2 px-3 pb-3">
+            <div class="row px-3 pt-2 justify-content-center g-2">
+              <div class="col-12 col-md-12">
+                <h2 class="fs-3 pt-2 px-3 pb-3 text-center">
                   Cerca e trova tra album ed artisti!
                 </h2>
 
@@ -167,7 +172,7 @@
                   </button>
                 </div>
               </div>
-              <div class="col-6 col-md-5 small text-end">
+              <div class="col-6 col-md-5 small text-end" id="show-more">
                 <p class="text-white-50 small fw-bold">
                   <small>VISUALIZZA TUTTO</small>
                 </p>
