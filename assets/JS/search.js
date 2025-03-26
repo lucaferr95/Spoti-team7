@@ -45,13 +45,16 @@ function displayResults(results) {
   results.forEach((item) => {
     resultsDiv.innerHTML += `
     
-            <div class="col-12 col-md-6 col-lg-4 pt-4">
-                <div class="card mb-3">
+            <div class="col-12 col-md-6 col-lg-4 pt-4 d-flex align-items-stretch">
+                <div class="card mb-3 d-flex flex-column">
                     <img src="${item.album.cover_medium}" class="card-img-top" alt="img di ${item.album.title}">
-                    <div class="card-body bg-black bg-opacity-50 bg-gradient text-white">
+                    <div class="card-body bg-success bg-opacity-75 bg-gradient text-white d-flex flex-column">
                         <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">Artista: ${item.artist.name}</p>
-                        <button href="${item.link}" target="_blank" class="btn btn-sm btn-success">Ascolta su spotify</button>
+                        <p class="card-text flex-grow-1 small">Artista: ${item.artist.name}</p>
+                        
+<a href="" target="_blank" class="btn btn-sm btn-dark">Ascolta ora</a>
+                  
+                        
                     </div>
                 </div>
             </div>
