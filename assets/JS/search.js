@@ -38,6 +38,9 @@ document.getElementById("searchButton").addEventListener("click", function () {
     })
 })
 
+const albumAPI = "https://striveschool-api.herokuapp.com/api/deezer/album/"
+const artistAPI = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+
 function displayResults(results) {
   const resultsDiv = document.getElementById("results")
   resultsDiv.innerHTML = ""
@@ -47,10 +50,10 @@ function displayResults(results) {
     
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 pt-4 justify-content-center  d-flex align-items-stretch">
                 <div class="card mb-3 d-flex flex-column w-100">
-                    <img src="${item.album.cover_medium}" class="card-img-top" alt="img di ${item.album.title}">
+                    <a href="albumpage.html?id=${item.album.id}"><img src="${item.album.cover_medium}" class="card-img-top" alt="img di ${item.album.title}"></a>
                     <div class="card-body bg-success bg-opacity-75 bg-gradient text-white d-flex flex-column">
                         <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text flex-grow-1 small">Artista: ${item.artist.name}</p>
+                        <p class="card-text flex-grow-1 small"><a class="text-white text-decoration-none" href="artistpage.html?id=${item.artist.id}">Artista: ${item.artist.name}</p>
                         
 <a href="" target="_blank" class="btn btn-sm btn-dark">Ascolta ora</a>
                   
@@ -61,3 +64,5 @@ function displayResults(results) {
         `
   })
 }
+
+/* link API */
