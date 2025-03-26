@@ -31,6 +31,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
 
       if (data && data.data.length > 0) {
         displayResults(data.data)
+        console.log(data)
       } else {
         document.getElementById("results").innerHTML =
           "<p>Nessun risultato trovato.</p>"
