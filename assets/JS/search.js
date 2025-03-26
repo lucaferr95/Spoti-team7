@@ -17,16 +17,17 @@ document.getElementById("searchButton").addEventListener("click", function () {
   <span class="visually-hidden">Loading...</span>
 </div>`
 
-  // Eseguiamo la ricerca
+  // Ricerca
   fetch(searchAPI + query)
     .then((response) => {
-      if (!response.ok) {
+      if (response.ok) {
+        return response.json()
+      } else {
         throw new Error("Errore nella ricerca")
       }
-      return response.json()
     })
     .then((data) => {
-      document.getElementById("results").innerHTML = "" // Pulisce i risultati
+      document.getElementById("results").innerHTML = ""
 
       if (data && data.data.length > 0) {
         displayResults(data.data)
