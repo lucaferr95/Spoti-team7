@@ -39,7 +39,11 @@
               <a class="nav-link active text-white" aria-current="page" href="#"
                 ><i class="fas fa-home text-white pe-2"></i> Home</a
               >
-              <a class="nav-link text-white" href="#"
+
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="./search.html"
                 ><i class="fas fa-search text-white pe-2"></i> Cerca</a
               >
               <a class="nav-link text-white" href="/assets/HTML/profile.html"
@@ -431,17 +435,13 @@
     </main>
     <footer class="bg-dark bg-gradient sticky-md-bottom">
       <div class="container-fluid">
-        <div class="row align-items-center py-3">
+        <div class="row align-items-center py-2">
           <!-- Sezione canzone corrente -->
           <div class="col-12 col-md-4 d-flex align-items-center">
-            <img
-              src="https://i.scdn.co/image/ab67616d00001e02c60b6ec17dcd820b3b6cd380"
-              class="img-fluid me-2"
-              style="width: 100px; height: 100px"
-            />
+            <img id="image-footer" src="" class="w-25 me-2" />
             <div>
-              <p class="fw-bold text-white-50 small mb-1">Soldi</p>
-              <p class="small text-white-50 mb-0">Mahmood</p>
+              <p id="song-name" class="fw-bold text-white-50 small mb-1"></p>
+              <p id="artist-name" class="small text-white-50 mb-0"></p>
             </div>
             <i class="far fa-heart ms-3 text-white-50"></i>
           </div>
@@ -457,11 +457,8 @@
             </div>
             <div class="d-flex align-items-center mt-2 fs-3">
               <span class="small">0:50</span>
-              <div
-                class="progress flex-grow-1 mx-2 bg-secondary"
-                style="height: 5px"
-              >
-                <div class="progress-bar bg-white" style="width: 25%"></div>
+              <div class="progress flex-grow-1 mx-2 bg-secondary">
+                <div class="progress-bar bg-white w-25"></div>
               </div>
               <span class="small">3:20</span>
             </div>
@@ -469,7 +466,7 @@
 
           <!-- Sezione icone a destra -->
           <div
-            class="col-12 col-md-4 d-flex justify-content-center align-items-center gap-2 fs-5"
+            class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center gap-2 fs-5"
           >
             <i class="fas fa-microphone text-white-50"></i>
             <i class="fas fa-hamburger text-white-50"></i>
@@ -480,7 +477,7 @@
                 class="progress bg-secondary"
                 style="width: 80px; height: 5px"
               >
-                <div class="progress-bar bg-white w-100"></div>
+                <div class="progress-bar bg-white w-50"></div>
               </div>
             </div>
             <i class="fas fa-expand-alt text-white-50"></i>
