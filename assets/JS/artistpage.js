@@ -73,7 +73,7 @@ fetch(apiUrl)
         }
 
         trackDiv.innerHTML += `
-          <div class="row py-2">
+          <div class="row py-2 bg-black">
               <div class="row small">
                   <div class="col-9">
                       <span>${index + 1}</span>
@@ -91,7 +91,7 @@ fetch(apiUrl)
                           data-artist="${track.artist.name}"
                           data-duration="${track.duration}"
                           onclick="togglePlay(this)">
-                          <i class="fas fa-play fa-lg text-white"></i> 
+                          <i  class="fas fa-play-circle fa-lg "></i> 
                       </button>
                   </div>
                   <div class="col-2 small pt-1 pe-0 text-end">
@@ -153,8 +153,8 @@ function togglePlay(button) {
 
 function updateButton(button, isPlaying) {
   let icon = button.querySelector('i');
-  icon.classList.toggle('fa-play', !isPlaying);
-  icon.classList.toggle('fa-pause', isPlaying);
+  icon.classList.toggle('fa-play-circle', !isPlaying);
+  icon.classList.toggle('fa-pause-circle', isPlaying);
 }
 
 function updateFooter(cover, title, artist, duration) {
@@ -189,7 +189,10 @@ function seekTrack(event) {
 }
 
 // Volume Control
+
 let volumeControl = document.getElementById('volume-control');
+audioPlayer.volume = 0.5; // Imposta il volume al 50% all'avvio
+volumeControl.value = 50; // Imposta il valore della barra del volume a 50%
 volumeControl.addEventListener('input', function () {
   audioPlayer.volume = this.value / 100;
 });
