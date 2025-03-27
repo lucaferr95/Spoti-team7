@@ -49,7 +49,7 @@ const displayAlbum = (data) => {
         <div class="col-md-8 d-flex flex-column">
           <h3 class="text-center text-black text-gradient fs-2"> NOW PLAYING </h3>
           <div class="album-title-container">
-            <h2 class="text-decoration-underline text-warning  text-opacity-75 display-4 album-font album-title fs-5 text-wrap">
+            <h2 class="text-decoration-underline text-warning fw-bold text-opacity-75 display-4 album-font album-title fs-5 text-wrap">
               ${data.title}
             </h2>
           </div>
