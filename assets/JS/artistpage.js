@@ -12,7 +12,7 @@ function formatDuration(durationInSeconds) {
 // Funzione per determinare se il colore è chiaro o scuro
 function isDarkColor(r, g, b) {
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  return brightness < 128; // Se è scuro, ritorna true
+  return brightness < 128;
 }
 
 // Funzione per cambiare colore del testo in base allo sfondo
@@ -30,22 +30,18 @@ function adjustTextColor(imageUrl) {
 
     const pixelData = ctx.getImageData(0, 0, 1, 1).data;
     const [r, g, b] = pixelData;
-
     const textColor = isDarkColor(r, g, b) ? 'white' : 'black';
 
     document.getElementById('artist-name').style.color = textColor;
     document.getElementById('artist-name2').style.color = textColor;
     document.getElementById('artist-fans').style.color = textColor;
-    const verifiedText = document.getElementById('verified-artist');
-    verifiedText.style.color = textColor;
-    verifiedText.style.setProperty('color', textColor, 'important');
+    document.getElementById('verified-artist').style.color = textColor;
   };
 }
 
 fetch(apiUrl)
   .then((response) => response.json())
   .then((artist) => {
-    console.log(artist);
     document.getElementById('artist-name').innerText = artist.name;
     document.getElementById('artist-name1').innerText = artist.name;
     document.getElementById('artist-name2').innerText = artist.name;
@@ -56,15 +52,11 @@ fetch(apiUrl)
       'artist-fans'
     ).innerText = `${artist.nb_fan} ascoltatori mensili`;
 
-    // Modifica colore del testo in base all'immagine
     adjustTextColor(artist.picture_big);
-
     return fetch(artist.tracklist);
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-
     const trackDiv = document.getElementById('trackDiv');
     const showMoreBtn = document.getElementById('showMoreBtn');
     let showAll = false;
@@ -99,7 +91,7 @@ fetch(apiUrl)
                           data-artist="${track.artist.name}"
                           data-duration="${track.duration}"
                           onclick="togglePlay(this)">
-                          ▶️
+                          <i class="fas fa-play fa-lg text-white"></i> 
                       </button>
                   </div>
                   <div class="col-2 small pt-1 pe-0 text-end">
@@ -160,7 +152,9 @@ function togglePlay(button) {
 }
 
 function updateButton(button, isPlaying) {
-  button.innerHTML = isPlaying ? '⏸️' : '▶️';
+  let icon = button.querySelector('i');
+  icon.classList.toggle('fa-play', !isPlaying);
+  icon.classList.toggle('fa-pause', isPlaying);
 }
 
 function updateFooter(cover, title, artist, duration) {
@@ -194,10 +188,8 @@ function seekTrack(event) {
   audioPlayer.currentTime = seekTime;
 }
 
-//volume
+// Volume Control
 let volumeControl = document.getElementById('volume-control');
-let audioPlayerVolume = document.getElementById('audioPlayer'); // Assicurati che sia il player corretto
-
 volumeControl.addEventListener('input', function () {
-  audioPlayer.volume = this.value / 100; // Converte il valore da 0-100 a 0-1
+  audioPlayer.volume = this.value / 100;
 });
