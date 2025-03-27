@@ -27,6 +27,10 @@
         display: none;
         cursor: pointer;
       }
+
+      .rotate {
+        transform: rotate(24deg);
+      }
     </style>
   </head>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
@@ -209,9 +213,58 @@
             </div>
             <div class="col-12">
               <h3 class="fs-4 text-center">Sfoglia tutto</h3>
-              <div class="row justify-content-center">
-                <div class="col-6"></div>
-                <div class="col-6"></div>
+              <div class="row row-cols-1 row-cols-md-2 g-4 mx-4 pt-3">
+                <div class="col">
+                  <div class="card text-bg-primary mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title pb-3 fs-4">Podcast</h5>
+                      <p class="card-text text-end">
+                        <img
+                          src="../imgs/search/image-2.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        This is a longer card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        This is a longer card with supporting text below as a
+                        natural lead-in to additional content.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        This is a longer card with supporting text below as a
+                        natural lead-in to additional content. This content is a
+                        little bit longer.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -357,11 +410,7 @@
                   aria-valuemax="100"
                   onclick="seekTrack(event)"
                 >
-                  <div
-                    class="progress-bar bg-white"
-                    id="progress-bar"
-                    style="width: 1.82593%"
-                  ></div>
+                  <div class="progress-bar bg-white" id="progress-bar"></div>
                 </div>
               </div>
               <div class="col-2 p-0 text-start">
