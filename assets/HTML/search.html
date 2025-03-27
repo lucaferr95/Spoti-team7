@@ -283,54 +283,170 @@
         </div>
       </div>
     </main>
-    <footer class="bg-dark bg-gradient sticky-md-bottom">
+    <footer class="bg-dark bg-gradient sticky-bottom bg-opacity-50">
       <div class="container-fluid">
-        <div class="row align-items-center py-2">
-          <!-- Sezione canzone corrente -->
-          <div class="col-12 col-md-4 d-flex align-items-center">
-            <img id="image-footer" src="" class="w-25 me-2" />
-            <div>
-              <p id="song-name" class="fw-bold text-white-50 small mb-1"></p>
-              <p id="artist-name" class="small text-white-50 mb-0"></p>
-            </div>
-            <i class="far fa-heart ms-3 text-white-50"></i>
-          </div>
-
-          <!-- Sezione player -->
-          <div class="col-12 col-md-4 text-center">
-            <div class="d-flex justify-content-center gap-2 fs-4">
-              <i class="fas fa-random text-success"></i>
-              <i class="fas fa-step-backward"></i>
-              <i class="fas fa-play-circle"></i>
-              <i class="fas fa-step-forward"></i>
-              <i class="fas fa-redo-alt text-success"></i>
-            </div>
-            <div class="d-flex align-items-center mt-2 fs-3">
-              <span class="small">0:50</span>
-              <div class="progress flex-grow-1 mx-2 bg-secondary">
-                <div class="progress-bar bg-white w-25"></div>
-              </div>
-              <span class="small">3:20</span>
-            </div>
-          </div>
-
-          <!-- Sezione icone a destra -->
+        <div
+          class="row align-items-center py-3 d-flex justify-content-between bg-dark"
+        >
           <div
-            class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center gap-2 fs-5"
+            class="col-12 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start"
           >
-            <i class="fas fa-microphone text-white-50"></i>
-            <i class="fas fa-hamburger text-white-50"></i>
-            <i class="fas fa-window-restore text-white-50"></i>
-            <div class="d-flex align-items-center">
-              <i class="fas fa-volume-up text-white-50 me-2"></i>
-              <div
-                class="progress bg-secondary"
-                style="width: 80px; height: 5px"
-              >
-                <div class="progress-bar bg-white w-50"></div>
+            <div class="row pt-2 pe-0 align-items-center">
+              <div class="col-md-4 d-none d-lg-block justify-content-center">
+                <img
+                  src="https://api.deezer.com/album/9410086/image"
+                  class="w-100"
+                  id="footer-track-img"
+                />
+              </div>
+              <div class="col-md-6" id="">
+                <p
+                  class="fw-bold text-white-50 small mb-1"
+                  id="footer-track-name"
+                >
+                  Highway to Hell <i class="d-md-none far fa-heart ps-2"></i>
+                  <i class="d-md-none fas fa-play ps-4"></i>
+                </p>
+                <p class="d-none" id="footer-artist-name">AC/DC</p>
+
+                <p
+                  class="d-none d-md-block small text-white-50 mb-1"
+                  id="artist-name2"
+                >
+                  System of a Down
+                </p>
+              </div>
+              <div class="col-md-2 d-none d-md-block pe-0 align-content-center">
+                <i class="far fa-heart ps-2"></i>
               </div>
             </div>
-            <i class="fas fa-expand-alt text-white-50"></i>
+          </div>
+
+          <div
+            class="d-none d-md-block col-12 col-md-6 justify-content-center align-items-center gap-2 fs-5"
+          >
+            <div class="row justify-content-center text-center">
+              <div class="col-12 gap-0 column-gap-3 pb-2">
+                <i class="fas fa-random text-success"></i>
+                <i class="fas fa-step-backward"></i>
+                <i class="fas fa-play-circle"></i>
+                <i class="fas fa-step-forward"></i>
+                <i class="fas fa-redo-alt text-success"></i>
+              </div>
+            </div>
+            <div
+              class="row align-content-center flex-grow-1 my-0 d-flex align-items-center mt-2"
+            >
+              <div class="col-2 p-0 text-end">
+                <span class="small" id="current-time">0:00</span>
+              </div>
+              <div class="col-8 pt-1 flex-grow-1">
+                <div
+                  class="progress bg-secondary"
+                  role="progressbar"
+                  aria-label="Basic example"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  onclick="seekTrack(event)"
+                >
+                  <div
+                    class="progress-bar bg-white"
+                    id="progress-bar"
+                    style="width: 1.82593%"
+                  ></div>
+                </div>
+              </div>
+              <div class="col-2 p-0 text-start">
+                <span class="small" id="total-time">3:26</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="d-none d-md-block col-md-3 justify-content-end align-content-center text-start"
+          >
+            <div class="row">
+              <div
+                class="d-md-none d-lg-block col-md-4 px-0 text-start text-white-50"
+              >
+                <i class="fas fa-microphone pe-1"></i>
+                <i class="fas fa-hamburger pe-1"></i>
+                <i class="fas fa-window-restore"></i>
+              </div>
+              <div class="col-md-6 px-0">
+                <div class="row">
+                  <div class="col-md-3 text-white-50 px-0">
+                    <i class="fas fa-volume-up"></i>
+                  </div>
+                  <div class="col-md-9 px-0">
+                    <input
+                      type="range"
+                      id="volume-control"
+                      min="0"
+                      max="100"
+                      step="1"
+                      value="100"
+                      class="form-range"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <i class="fas fa-expand-alt text-white-50 ps-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-md-none row justify-content-center bg-dark bg-opacity-75 pt-3"
+        >
+          <div class="col-4 text-center">
+            <i class="fas fa-home text-white pe-2 fs-4"></i>
+            <small
+              ><a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="./homepage.html"
+              >
+                Home</a
+              ></small
+            >
+          </div>
+          <div class="col-4 text-center">
+            <i class="fas fa-search text-white-50 pe-2 fs-4"></i>
+            <small
+              ><a
+                class="nav-link active text-white-50"
+                aria-current="page"
+                href="./homepage.html"
+              >
+                Cerca</a
+              ></small
+            >
+          </div>
+          <div class="col-4 text-center text-white-50">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="54"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-library-big pe-2"
+            >
+              <rect width="8" height="18" x="3" y="3" rx="1"></rect>
+              <path d="M7 3v18"></path>
+              <path
+                d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"
+              ></path>
+            </svg>
+            <small
+              ><a class="nav-link text-white-50" href="profile.html"
+                >La tua libreria
+              </a></small
+            >
           </div>
         </div>
       </div>
@@ -344,3 +460,8 @@
     <script src="../JS/common.js"></script>
   </body>
 </html>
+
+<!--Footer mobile
+
+
+ -->
