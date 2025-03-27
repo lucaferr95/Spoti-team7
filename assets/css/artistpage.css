@@ -3,10 +3,9 @@
 }
 .imgcover {
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 260px;
+  min-height: 350px;
 }
 .ellipsis {
   white-space: nowrap;

@@ -1,12 +1,12 @@
 // FOOTER //
 
 /* link API */
-const albumAPI = "https://striveschool-api.herokuapp.com/api/deezer/album/"
-const artistAPI = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+const albumAPIcommon =
+  "https://striveschool-api.herokuapp.com/api/deezer/album/"
+const artistAPIcommon =
+  "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 
 document.addEventListener("DOMContentLoaded", function () {
-  const albumAPI = "https://striveschool-api.herokuapp.com/api/deezer/album/"
-
   // Array di ID di album
   const idArrayAlbums = [
     "9410100",
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     idArrayAlbums[Math.floor(Math.random() * idArrayAlbums.length)]
 
   // Fetch per ottenere i dati dell'album casuale
-  fetch(albumAPI + randomAlbumId)
+  fetch(albumAPIcommon + randomAlbumId)
     .then((response) => {
       if (!response.ok) throw new Error("Errore nella richiesta API")
       return response.json()
