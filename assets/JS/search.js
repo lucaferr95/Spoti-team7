@@ -71,8 +71,8 @@ function displayResults() {
           <div class="card-body bg-success bg-opacity-75 bg-gradient text-white d-flex flex-column">
             <h5 class="card-title">${item.title}</h5>
             <p class="card-text flex-grow-1 small">Artista: ${item.artist.name}</p>
-            <a href="albumpage.html?id=${item.album.id}" target="_blank" class="btn btn-sm btn-dark">Ascolta l'album</a>
-            <a href="artistpage.html?id=${item.artist.id}" target="_blank" class="btn btn-sm btn-success mt-3">Ascolta l'artista</a>
+            <a href="albumpage.html?id=${item.album.id}" class="btn btn-sm btn-dark">Ascolta l'album</a>
+            <a href="artistpage.html?id=${item.artist.id}" class="btn btn-sm btn-success mt-3">Ascolta l'artista</a>
           </div>
         </div>
       </div>
