@@ -76,12 +76,21 @@ const displayAlbum = (data) => {
         ${data.tracks.data
           .map(
             (track, index) => `
-              <li class="list-group-item w-100 text-white d-flex justify-content-between align-items-center"
-                  style="background-color: #21160F; border: none;">
-                <span>${index + 1}. ${track.title}</span>
+              <li class="list-group-item w-100 text-white d-flex justify-content-between align-items-center bg-transparent border-0">
+                <span>${index + 1}. ${track.title} <button class="btn btn-sm play-btn"
+                          data-preview="${track.preview}"
+                          data-cover="${track.album.cover}"
+                          data-title="${track.title}"
+                          data-artist="${track.artist.name}"
+                          data-duration="${track.duration}"
+                          onclick="togglePlay(this)">
+                          ▶️
+                      </button></span>
+                
                 <span>${Math.floor(track.duration / 60)}:${(track.duration % 60)
               .toString()
               .padStart(2, "0")}</span>
+              
               </li>
             `
           )
