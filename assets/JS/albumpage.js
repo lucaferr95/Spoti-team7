@@ -1,31 +1,24 @@
 // Recupero del parametro 'id' dalla URL
 const URLparameters = new URLSearchParams(location.search);
-const eventId = URLparameters.get("id");
+const eventId = URLparameters.get('id');
 
 if (eventId) {
   const albumURL = `https://striveschool-api.herokuapp.com/api/deezer/album/${eventId}`;
 
-  // Chiamata fetch per ottenere i dati dell'album
-  fetch(albumURL, { method: "GET" })
+  fetch(albumURL)
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("La risposta non era valida");
-      }
+      if (!response.ok) throw new Error('Errore nella richiesta');
+      return response.json();
     })
     .then((data) => {
-      console.log("DATI RICEVUTI DAL SERVER", data);
+      console.log('DATI RICEVUTI', data);
       displayAlbum(data);
     })
-    .catch((error) => {
-      console.log("Errore:", error);
-    });
+    .catch((error) => console.log('Errore:', error));
 }
 
-// Funzione per visualizzare l'album e le tracce
 const displayAlbum = (data) => {
-  const row = document.getElementById("displayAlbum");
+  const row = document.getElementById('displayAlbum');
   row.innerHTML = `
     <div class="pb-3 bg-primary bg-opacity-50 bg-gradient">
       <div class="row align-items-center">
@@ -56,14 +49,16 @@ const displayAlbum = (data) => {
         <div class="col-md-8 d-flex flex-column">
           <h3 class="text-center text-black text-gradient fs-2"> NOW PLAYING </h3>
           <div class="album-title-container">
-            <h2 class="text-decoration-underline text-opacity-75 display-4 album-font album-title fs-5 text-wrap">${
-              data.title
-            }</h2>
+            <h2 class="text-decoration-underline text-opacity-75 display-4 album-font album-title fs-5 text-wrap">
+              ${data.title}
+            </h2>
           </div>
-          <a href="artistpage.html?id=${data.artist.id}" class="text-white-50 text-decoration-none">
-          <h5 class="text-white fs-5 text-start text-white-50">${
-            data.artist.name
-          }</h5>
+          <a href="artistpage.html?id=${
+            data.artist.id
+          }" class="text-white-50 text-decoration-none">
+            <h5 class="text-white fs-5 text-start text-white-50">${
+              data.artist.name
+            }</h5>
           </a>
           <h5 class="text-white fs-5 text-start text-white-50">${
             data.release_date
@@ -77,25 +72,130 @@ const displayAlbum = (data) => {
           .map(
             (track, index) => `
               <li class="list-group-item w-100 text-white d-flex justify-content-between align-items-center bg-transparent border-0">
-                <span>${index + 1}. ${track.title} <button class="btn btn-sm play-btn"
+                <span>${index + 1}. ${track.title} 
+                  <button class="btn btn-sm play-btn"
                           data-preview="${track.preview}"
                           data-cover="${track.album.cover}"
                           data-title="${track.title}"
                           data-artist="${track.artist.name}"
                           data-duration="${track.duration}"
                           onclick="togglePlay(this)">
-                          ▶️
-                      </button></span>
-                
-                <span>${Math.floor(track.duration / 60)}:${(track.duration % 60)
-              .toString()
-              .padStart(2, "0")}</span>
-              
+                      <i class="fas fa-play-circle fa-lg"></i>  
+                  </button>
+                </span>
+                <span>${formatTime(track.duration)}</span>
               </li>
             `
           )
-          .join("")}
+          .join('')}
       </ul>
     </div>
   `;
 };
+
+let currentAudio = null;
+let currentButton = null;
+let progressBar = document.getElementById('progress-bar');
+let currentTimeDisplay = document.getElementById('current-time');
+let totalTimeDisplay = document.getElementById('total-time');
+
+// Footer elementi
+const footerTrackName = document.getElementById('footer-track-name');
+const footerArtistName = document.getElementById('footer-artist-name');
+const footerArtistName2 = document.getElementById('artist-name2');
+const footerTrackImage = document.getElementById('footer-track-image');
+
+const togglePlay = (button) => {
+  const trackUrl = button.getAttribute('data-preview');
+  const duration = parseInt(button.getAttribute('data-duration'), 10);
+  const trackTitle = button.getAttribute('data-title');
+  const trackArtist = button.getAttribute('data-artist');
+  const trackCover = button.getAttribute('data-cover');
+  const icon = button.querySelector('i');
+
+  if (currentAudio) {
+    if (currentAudio.src === trackUrl) {
+      if (currentAudio.paused) {
+        currentAudio.play();
+        icon.classList.replace('fa-play-circle', 'fa-pause-circle');
+      } else {
+        currentAudio.pause();
+        icon.classList.replace('fa-pause-circle', 'fa-play-circle');
+      }
+      return;
+    } else {
+      currentAudio.pause();
+      currentButton
+        .querySelector('i')
+        .classList.replace('fa-pause-circle', 'fa-play-circle');
+    }
+  }
+
+  currentAudio = new Audio(trackUrl);
+  currentAudio.play();
+  icon.classList.replace('fa-play-circle', 'fa-pause-circle');
+  currentButton = button;
+
+  totalTimeDisplay.textContent = formatTime(duration);
+
+  // Aggiorna il footer con la traccia in riproduzione
+  footerTrackName.textContent = trackTitle;
+  footerArtistName.textContent = trackArtist;
+  footerArtistName2.textContent = trackArtist;
+  footerTrackImage.src = trackCover;
+  footerTrackImage.onload = () => {
+    footerTrackImage.style.width = '80px';
+    footerTrackImage.style.height = '80px';
+    footerTrackImage.style.objectFit = 'cover';
+  };
+
+  footerTrackImage.src = trackCover; // Cambia l'immagine
+
+  currentAudio.ontimeupdate = updateProgress;
+  currentAudio.onended = () => {
+    icon.classList.replace('fa-pause-circle', 'fa-play-circle');
+    progressBar.style.width = '0%';
+    currentTimeDisplay.textContent = '0:00';
+  };
+};
+
+const updateProgress = () => {
+  if (currentAudio) {
+    let progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    currentTimeDisplay.textContent = formatTime(
+      Math.floor(currentAudio.currentTime)
+    );
+  }
+};
+
+const seekTrack = (event) => {
+  if (!currentAudio) return;
+
+  const progressContainer = event.currentTarget;
+  const rect = progressContainer.getBoundingClientRect();
+  const clickX = event.clientX - rect.left;
+  const width = rect.width;
+  const seekTime = (clickX / width) * currentAudio.duration;
+
+  currentAudio.currentTime = seekTime;
+};
+
+const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${minutes}:${secs.toString().padStart(2, '0')}`;
+};
+
+const volumeControl = document.getElementById('volume-control');
+volumeControl.value = 50; // Aggiorna la barra di input
+if (currentAudio) {
+  currentAudio.volume = 0.5; // Imposta il volume dell'audio
+}
+
+// Aggiorna il volume quando cambia l'input
+volumeControl.addEventListener('input', () => {
+  if (currentAudio) {
+    currentAudio.volume = volumeControl.value / 100;
+  }
+});
