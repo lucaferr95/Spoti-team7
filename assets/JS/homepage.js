@@ -3,9 +3,9 @@ const albumAPI = 'https://striveschool-api.herokuapp.com/api/deezer/album/'
 const artistAPI = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
 
 
-/* array con 5 ID di album e ogni votla che si refresha la pagina sulla cover iniziale c'è un album diverso */
+/* array con 7 ID di album e ogni votla che si refresha la pagina sulla cover iniziale c'è un album diverso */
 
-const idArrayAlbums = ['9410100', '14879699', '8015598', '6883271', '75621062'] // AC/DC, Radiohead, Evanescence, queen
+const idArrayAlbums = ['9410100', '14879699', '8015598', '6883271', '75621062', '78630952', '118746152', '300782'] // AC/DC, Radiohead, Evanescence, System, Queen, iron maiden, falling in reverse, sigur ros
 let raondomAlbumIndex = Math.floor(Math.random() * idArrayAlbums.length)
 let randomAlbumSelected = idArrayAlbums[raondomAlbumIndex]
 console.log('r', randomAlbumSelected)
@@ -113,7 +113,7 @@ const getMultipleAlbums = function () {
         // search.data[0].album.cover_big immagine album
 
         //const arrayOfDifferentArtists = [search.data[0], search.data[13], search.data[14], search.data[23], search.data[22]]
-        const arrayOfDifferentArtists = [0, 13, 14, 23, 24]
+        const arrayOfDifferentArtists = [0, 15, 14, 21, 18]
 
       
         const emptyRow = document.getElementById('empty-row')

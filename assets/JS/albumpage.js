@@ -60,9 +60,11 @@ const displayAlbum = (data) => {
               data.title
             }</h2>
           </div>
+          <a href="artistpage.html?id=${data.artist.id}" class="text-white-50 text-decoration-none">
           <h5 class="text-white fs-5 text-start text-white-50">${
             data.artist.name
           }</h5>
+          </a>
           <h5 class="text-white fs-5 text-start text-white-50">${
             data.release_date
           }</h5>
