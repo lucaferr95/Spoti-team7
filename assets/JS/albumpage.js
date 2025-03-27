@@ -1,24 +1,24 @@
 // Recupero del parametro 'id' dalla URL
 const URLparameters = new URLSearchParams(location.search);
-const eventId = URLparameters.get('id');
+const eventId = URLparameters.get("id");
 
 if (eventId) {
   const albumURL = `https://striveschool-api.herokuapp.com/api/deezer/album/${eventId}`;
 
   fetch(albumURL)
     .then((response) => {
-      if (!response.ok) throw new Error('Errore nella richiesta');
+      if (!response.ok) throw new Error("Errore nella richiesta");
       return response.json();
     })
     .then((data) => {
-      console.log('DATI RICEVUTI', data);
+      console.log("DATI RICEVUTI", data);
       displayAlbum(data);
     })
-    .catch((error) => console.log('Errore:', error));
+    .catch((error) => console.log("Errore:", error));
 }
 
 const displayAlbum = (data) => {
-  const row = document.getElementById('displayAlbum');
+  const row = document.getElementById("displayAlbum");
   row.innerHTML = `
     <div class="pb-3 bg-primary bg-opacity-50 bg-gradient">
       <div class="row align-items-center">
@@ -49,7 +49,7 @@ const displayAlbum = (data) => {
         <div class="col-md-8 d-flex flex-column">
           <h3 class="text-center text-black text-gradient fs-2"> NOW PLAYING </h3>
           <div class="album-title-container">
-            <h2 class="text-decoration-underline text-opacity-75 display-4 album-font album-title fs-5 text-wrap">
+            <h2 class="text-decoration-underline text-warning  text-opacity-75 display-4 album-font album-title fs-5 text-wrap">
               ${data.title}
             </h2>
           </div>
@@ -60,7 +60,7 @@ const displayAlbum = (data) => {
               data.artist.name
             }</h5>
           </a>
-          <h5 class="text-white fs-5 text-start text-white-50">${
+          <h5 class="text-dark fs-5 text-start text-dark-50">${
             data.release_date
           }</h5>
         </div>
@@ -87,7 +87,7 @@ const displayAlbum = (data) => {
               </li>
             `
           )
-          .join('')}
+          .join("")}
       </ul>
     </div>
   `;
@@ -95,45 +95,45 @@ const displayAlbum = (data) => {
 
 let currentAudio = null;
 let currentButton = null;
-let progressBar = document.getElementById('progress-bar');
-let currentTimeDisplay = document.getElementById('current-time');
-let totalTimeDisplay = document.getElementById('total-time');
+let progressBar = document.getElementById("progress-bar");
+let currentTimeDisplay = document.getElementById("current-time");
+let totalTimeDisplay = document.getElementById("total-time");
 
 // Footer elementi
-const footerTrackName = document.getElementById('footer-track-name');
-const footerArtistName = document.getElementById('footer-artist-name');
-const footerArtistName2 = document.getElementById('artist-name2');
-const footerTrackImage = document.getElementById('footer-track-image');
+const footerTrackName = document.getElementById("footer-track-name");
+const footerArtistName = document.getElementById("footer-artist-name");
+const footerArtistName2 = document.getElementById("artist-name2");
+const footerTrackImage = document.getElementById("footer-track-image");
 
 const togglePlay = (button) => {
-  const trackUrl = button.getAttribute('data-preview');
-  const duration = parseInt(button.getAttribute('data-duration'), 10);
-  const trackTitle = button.getAttribute('data-title');
-  const trackArtist = button.getAttribute('data-artist');
-  const trackCover = button.getAttribute('data-cover');
-  const icon = button.querySelector('i');
+  const trackUrl = button.getAttribute("data-preview");
+  const duration = parseInt(button.getAttribute("data-duration"), 10);
+  const trackTitle = button.getAttribute("data-title");
+  const trackArtist = button.getAttribute("data-artist");
+  const trackCover = button.getAttribute("data-cover");
+  const icon = button.querySelector("i");
 
   if (currentAudio) {
     if (currentAudio.src === trackUrl) {
       if (currentAudio.paused) {
         currentAudio.play();
-        icon.classList.replace('fa-play-circle', 'fa-pause-circle');
+        icon.classList.replace("fa-play-circle", "fa-pause-circle");
       } else {
         currentAudio.pause();
-        icon.classList.replace('fa-pause-circle', 'fa-play-circle');
+        icon.classList.replace("fa-pause-circle", "fa-play-circle");
       }
       return;
     } else {
       currentAudio.pause();
       currentButton
-        .querySelector('i')
-        .classList.replace('fa-pause-circle', 'fa-play-circle');
+        .querySelector("i")
+        .classList.replace("fa-pause-circle", "fa-play-circle");
     }
   }
 
   currentAudio = new Audio(trackUrl);
   currentAudio.play();
-  icon.classList.replace('fa-play-circle', 'fa-pause-circle');
+  icon.classList.replace("fa-play-circle", "fa-pause-circle");
   currentButton = button;
 
   totalTimeDisplay.textContent = formatTime(duration);
@@ -144,18 +144,18 @@ const togglePlay = (button) => {
   footerArtistName2.textContent = trackArtist;
   footerTrackImage.src = trackCover;
   footerTrackImage.onload = () => {
-    footerTrackImage.style.width = '80px';
-    footerTrackImage.style.height = '80px';
-    footerTrackImage.style.objectFit = 'cover';
+    footerTrackImage.style.width = "80px";
+    footerTrackImage.style.height = "80px";
+    footerTrackImage.style.objectFit = "cover";
   };
 
   footerTrackImage.src = trackCover; // Cambia l'immagine
 
   currentAudio.ontimeupdate = updateProgress;
   currentAudio.onended = () => {
-    icon.classList.replace('fa-pause-circle', 'fa-play-circle');
-    progressBar.style.width = '0%';
-    currentTimeDisplay.textContent = '0:00';
+    icon.classList.replace("fa-pause-circle", "fa-play-circle");
+    progressBar.style.width = "0%";
+    currentTimeDisplay.textContent = "0:00";
   };
 };
 
@@ -184,17 +184,17 @@ const seekTrack = (event) => {
 const formatTime = (seconds) => {
   const minutes = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
-  return `${minutes}:${secs.toString().padStart(2, '0')}`;
+  return `${minutes}:${secs.toString().padStart(2, "0")}`;
 };
 
-const volumeControl = document.getElementById('volume-control');
+const volumeControl = document.getElementById("volume-control");
 volumeControl.value = 50; // Aggiorna la barra di input
 if (currentAudio) {
   currentAudio.volume = 0.5; // Imposta il volume dell'audio
 }
 
 // Aggiorna il volume quando cambia l'input
-volumeControl.addEventListener('input', () => {
+volumeControl.addEventListener("input", () => {
   if (currentAudio) {
     currentAudio.volume = volumeControl.value / 100;
   }
