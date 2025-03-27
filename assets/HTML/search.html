@@ -53,7 +53,7 @@
                 ><i class="fas fa-search text-white pe-2"></i> Cerca</a
               >
 
-              <a class="nav-link text-white" href="profile.html">
+              <a class="nav-link text-white" href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -132,26 +132,85 @@
                 <i class="fas fa-chevron-circle-left text-white-50"></i>
                 <i class="fas fa-chevron-circle-right text-white-50"></i>
               </div>
-              <div class="col-6 text-end">
+              <div class="col-6 d-flex justify-content-end">
                 <div class="dropdown">
+                  <!-- Bottone principale con l'account selezionato -->
                   <button
-                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
+                    id="account-button"
+                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill d-flex align-items-center"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <img
-                      width="20"
+                      id="account-image"
+                      width="30"
                       src="/IMG_20241012_115436_809.jpg"
-                      class="rounded-circle me-1"
+                      class="rounded-circle me-2"
                     />
-                    Signor Leo..
+                    <span>Il tuo account</span>
                   </button>
-                  <ul class="dropdown-menu">
+
+                  <!-- Dropdown con lista profili -->
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-header text-center fw-bold">
+                      Cambia account
+                    </li>
                     <li>
-                      <a class="dropdown-item" href="profile.html"
-                        >Cambia account</a
+                      <a
+                        class="dropdown-item"
+                        href="profileleo.html"
+                        onclick="changeAccount('/IMG_20241012_115436_809.jpg')"
                       >
+                        <img
+                          src="/IMG_20241012_115436_809.jpg"
+                          width="30"
+                          class="rounded-circle me-2"
+                        />
+                        Lord Leo
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilelilla.html"
+                        onclick="changeAccount('/IMG-20250327-WA0041.jpg')"
+                      >
+                        <img
+                          src="/IMG-20250327-WA0041.jpg"
+                          width="30"
+                          class="rounded-circle me-2"
+                        />
+                        Miss Lilla
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profileteo.html"
+                        onclick="changeAccount('/IMG-20250327-WA0008.jpg')"
+                      >
+                        <img
+                          src="/IMG-20250327-WA0008.jpg"
+                          width="30"
+                          class="rounded-circle me-2"
+                        />
+                        Lord Teo
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilemimi.html"
+                        onclick="changeAccount('/IMG-20250327-WA0048.jpg')"
+                      >
+                        <img
+                          src="/IMG-20250327-WA0048.jpg"
+                          width="30"
+                          class="rounded-circle me-2"
+                        />
+                        Miss Mimi
+                      </a>
                     </li>
                   </ul>
                 </div>

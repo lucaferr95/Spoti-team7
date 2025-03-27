@@ -27,19 +27,89 @@ const displayAlbum = (data) => {
             <i class="fas fa-chevron-circle-left text-black"></i>
             <i class="fas fa-chevron-circle-right text-black"></i>
           </div>
-          <div class="col-6 text-end">
-            <div class="dropdown">
-              <button class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
-                      type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img width="20" src="../../IMG_20241012_115436_809.jpg" 
-                     class="rounded-circle me-1" />
-                Signor Leo...
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../HTML/profile.html">Cambia account</a></li>
-              </ul>
-            </div>
-          </div>
+       <div class="col-6 d-flex justify-content-end">
+                  <div class="dropdown">
+                    <!-- Bottone principale con l'account selezionato -->
+                    <button
+                      id="account-button"
+                      class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill d-flex align-items-center"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <img
+                        id="account-image"
+                        width="30"
+                        src="/IMG_20241012_115436_809.jpg"
+                        class="rounded-circle me-2"
+                      />
+                      <span>Il tuo account</span>
+                    </button>
+
+                    <!-- Dropdown con lista profili -->
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li class="dropdown-header text-center fw-bold">
+                        Cambia account
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="profileleo.html"
+                          onclick="changeAccount('/IMG_20241012_115436_809.jpg')"
+                        >
+                          <img
+                            src="/IMG_20241012_115436_809.jpg"
+                            width="30"
+                            class="rounded-circle me-2"
+                          />
+                          Lord Leo
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="profilelilla.html"
+                          onclick="changeAccount('/IMG-20250327-WA0041.jpg')"
+                        >
+                          <img
+                            src="/IMG-20250327-WA0041.jpg"
+                            width="30"
+                            class="rounded-circle me-2"
+                          />
+                          Miss Lilla
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="profileteo.html"
+                          onclick="changeAccount('/IMG-20250327-WA0008.jpg')"
+                        >
+                          <img
+                            src="/IMG-20250327-WA0008.jpg"
+                            width="30"
+                            class="rounded-circle me-2"
+                          />
+                          Lord Teo
+                        </a>
+                      </li>
+                        <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilemimi.html"
+                        onclick="changeAccount('/IMG-20250327-WA0048.jpg')"
+                      >
+                        <img
+                          src="/IMG-20250327-WA0048.jpg"
+                          width="30"
+                          class="rounded-circle me-2"
+                        />
+                        Miss Mimi
+                      </a>
+                    </li>
+                    </ul>
+                  </div>
+                </div>
         </div>
         <div class="col-md-4">
           <img src="${
