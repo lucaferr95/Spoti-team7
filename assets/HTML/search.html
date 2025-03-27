@@ -162,8 +162,6 @@
                 <h2 class="fs-3 pt-2 px-3 pb-3 text-center">
                   Cerca e trova tra album ed artisti!
                 </h2>
-
-                <!--fine test-->
               </div>
             </div>
 
@@ -180,6 +178,7 @@
                     placeholder="Cerca"
                     aria-label="Cerca"
                     aria-describedby="button-addon2"
+                    required
                   />
                   <button
                     class="btn btn-sm btn-outline-secondary"
@@ -187,6 +186,14 @@
                     id="searchButton"
                   >
                     <i class="fas fa-search text-white"></i>
+                  </button>
+                </div>
+                <div class="col-10 col-md-10 col-lg-8">
+                  <button
+                    id="resetButton"
+                    class="btn btn-outline-danger mt-3 ms-3"
+                  >
+                    Reset Ricerca
                   </button>
                 </div>
               </div>
@@ -199,6 +206,13 @@
                 </p>
               </div>
               <div class="row bg-dark mt-4" id="results"></div>
+            </div>
+            <div class="col-12">
+              <h3 class="fs-4 text-center">Sfoglia tutto</h3>
+              <div class="row justify-content-center">
+                <div class="col-6"></div>
+                <div class="col-6"></div>
+              </div>
             </div>
           </div>
 
@@ -296,25 +310,19 @@
                 <img
                   src="https://api.deezer.com/album/9410086/image"
                   class="w-100"
-                  id="footer-track-img"
+                  id="image-footer"
                 />
               </div>
               <div class="col-md-6" id="">
-                <p
-                  class="fw-bold text-white-50 small mb-1"
-                  id="footer-track-name"
-                >
-                  Highway to Hell <i class="d-md-none far fa-heart ps-2"></i>
+                <p class="fw-bold text-white-50 small mb-1" id="song-name">
+                  <i class="d-md-none far fa-heart ps-2"></i>
                   <i class="d-md-none fas fa-play ps-4"></i>
                 </p>
-                <p class="d-none" id="footer-artist-name">AC/DC</p>
 
                 <p
                   class="d-none d-md-block small text-white-50 mb-1"
-                  id="artist-name2"
-                >
-                  System of a Down
-                </p>
+                  id="artist-name"
+                ></p>
               </div>
               <div class="col-md-2 d-none d-md-block pe-0 align-content-center">
                 <i class="far fa-heart ps-2"></i>
@@ -417,7 +425,7 @@
               ><a
                 class="nav-link active text-white-50"
                 aria-current="page"
-                href="./homepage.html"
+                href="#"
               >
                 Cerca</a
               ></small
