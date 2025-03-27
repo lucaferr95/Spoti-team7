@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ARTIST PAGE</title>
+    <title>Profile Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -17,13 +17,39 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../css/artistpage.css" />
     <link rel="stylesheet" href="../css/heart.css" />
   </head>
+  <style>
+    .fontpage {
+      font-family: "Circular";
+      src: url(../fonts/CircularStd-Medium.otf);
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+    .playlist-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+    }
+    .list-group-item {
+      border: none !important; /* Rimuove il bordo */
+      background-color: transparent !important; /* Sfondo trasparente */
+    }
+  </style>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
     <main class="flex-grow-1">
+      <!-- container generale -->
       <div class="container-fluid">
+        <!-- row generale -->
         <div class="row">
+          <!-- aside sinistra -->
           <div class="col-6 col-md-3 col-lg-2 small">
             <nav
               class="nav flex-column d-none d-sm-block border-bottom border-1 small"
@@ -34,17 +60,13 @@
               <a
                 class="nav-link active text-white"
                 aria-current="page"
-                href="./homepage.html"
+                href="/assets/HTML/homepage.html"
                 ><i class="fas fa-home text-white pe-2"></i> Home</a
               >
-              <a
-                class="nav-link active text-white"
-                aria-current="page"
-                href="./search.html"
+              <a class="nav-link text-white" href="/assets/HTML/search.html"
                 ><i class="fas fa-search text-white pe-2"></i> Cerca</a
               >
-
-              <a class="nav-link text-white" href="#">
+              <a class="nav-link text-white" href=""">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -116,114 +138,91 @@
               <p class="mb-1"><small>The Beatles mix</small></p>
             </div>
           </div>
-          <!--colonna centrale-->
-          <div class="col-12 col-md-6 bg-dark col-lg-8 px-0" id="artist-div">
-            <!--divo con bg img-->
-            <!---->
+          <!-- parte centrale -->
+
+          <div class="col-12 col-md-6 bg-dark col-lg-8">
+            <!-- <div class="container-fluid w-75 mx-auto text-center bg-primary bg-gradient mt-5 p-4 "> -->
+
+            <!-- formata da:
+                  1) un container con il banner
+                  2) un container
+                    -->
             <div
-              class="row m-0 justify-content-between imgcover"
-              id="artist-background"
+              class="row text-center bg-primary bg-opacity-50 bg-gradient mt-1 p-4"
             >
-              <div class="col-6 ps-0">
-                <i class="fas fa-chevron-circle-left text-white-50"></i>
-                <i class="fas fa-chevron-circle-right text-white-50"></i>
+              <div>
+                <h1 class="text-center text-white mt-4">Il tuo account</h1>
               </div>
-              <div class="col-6 text-end">
-                <div class="dropdown">
+              <div class="row align-items-center">
+                <div class="col-6 text-center">
+                  <img
+                    src="/IMG_20241012_115436_809.jpg"
+                    alt="Foto profilo"
+                    width="150"
+                    height="150"
+                    class="rounded-circle img-fluid"
+                  />
+                </div>
+                <div class="col-6 text-center">
+                  <h2 class="text-white-50">Lord Leo</h2>
+                  <p class="text-muted fs-5">
+                    <span class="text-white">8</span> follomeower •
+                    <span class="text-white">28</span> seguiti
+                  </p>
                   <button
-                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    class="btn bg-dark bg-gradient fs-5 rounded-5 btn-outline-light btn-sm text-center"
                   >
-                    <img
-                      width="20"
-                      src="/IMG_20241012_115436_809.jpg"
-                      class="rounded-circle me-1"
-                    />
-                    Signor Leo...
+                    Modifica
                   </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="profile.html"
-                        >Cambia account</a
-                      >
-                    </li>
-                  </ul>
                 </div>
               </div>
-              <div class="mt-auto">
-                <p class="my-0" id="verified-artist">
-                  <i class="fas fa-certificate pe-1"></i>Artista verificato
-                </p>
-                <h2 class="fs-1" id="artist-name"></h2>
-                <p class="my-0" id="artist-fans"></p>
-              </div>
             </div>
-            <!--div con tracce-->
-            <div class="px-3 py-2 bg-black">
-              <!--div bottoni-->
-              <div id="buttons" class="mb-2">
-                <button
-                  class="btn btn-sm btn-success text-black rounded-pill fw-bold me-2"
-                >
-                  <!--commento di prova-->
-                  Play
-                </button>
-                <button
-                  class="btn btn-sm btn-dark border border-white me-3 fw-bold"
-                >
-                  Following</button
-                ><i class="fas fa-ellipsis-h text-white"></i>
-              </div>
-              <div class="row pt-4 py-2 d-flex">
-                <div class="col-12 order-last col-lg-7">
-                  <h5>Popolari</h5>
-                  <!--card 1-->
-                  <div id="trackDiv"></div>
+            <!-- fine container banner -->
 
-                  <!--card 1-->
-
-                  <!--card 1-->
-
-                  <!--card 1-->
-
-                  <!--card 1-->
-
+            <!-- inizio secondo container playlist -->
+            <div class="row mt-4 fs-1">
+              <h4>Playlist</h4>
+              <div class="list-group">
+                <a href="#" class="list-group-item d-flex align-items-center">
+                  <img
+                    src="/assets/imgs/main/image-18.jpg"
+                    class="playlist-img me-3"
+                  />
                   <div>
-                    <button id="showMoreBtn" class="btn btn-secondary mt-2">
-                      Visualizza altro
-                    </button>
+                    <h6 class="mb-0 text-white fs-4 mt-3">EPI-PLAY</h6>
+                    <small class="text-white-50 fs-5">7 salvataggi</small>
                   </div>
-                </div>
-                <!--colonna di destra centrale-->
-                <div class="col-12 order-first col-lg-5 order-lg-last">
-                  <h5 class="pb-2">Brani che ti piacciono</h5>
-                  <!--div card-->
-                  <div class="row small pb-4">
-                    <!--colonna con img-->
-                    <div class="col-3 small col-lg-3 text-center">
-                      <img
-                        src="../imgs/main/image-19.jpg"
-                        alt=""
-                        class="rounded-circle"
-                        width="48"
-                      />
-                    </div>
-                    <!--div con info-->
-                    <div class="col-9 small px-0 col-lg-9">
-                      <div class="small fw-bold pb-1">
-                        hai messo mi piace a 11 brani di
-                      </div>
-                      <div id="artist-name1" class="small">Di Yellowcard</div>
-                    </div>
-                  </div>
-                </div>
+                </a>
+              </div>
+              <div id="displayPlaylist bg-primary"></div>
+              <!-- a che serve questa riga vuota? -->
+              <div>
+                <iframe
+                  style="border-radius: 12px"
+                  src="https://open.spotify.com/embed/playlist/0TCIqS7gDraQykgm5YixHo?utm_source=generator"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+              </div>
+
+              <div class="d-flex justify-content-center mt-3">
+                <button
+                  class="btn bg-dark fs-5 text-center rounded-5 btn-outline-light btn-sm mb-3"
+                >
+                  Visualizza tutte le playlist
+                </button>
               </div>
             </div>
+
+            <!-- fine col zona centrale -->
           </div>
-          <!--colonna di destra-->
-          <div class="d-none d-sm-block col-12 col-md-3 pt-3 col-lg-2 small">
+
+          <!-- aside di destra -->
+          <div class="col-12 col-md-3 col-lg-2 pt-3 small">
             <div class="row">
               <div class="d-flex justify-content-between">
                 <h6 class="text-white">Attività amici</h6>
@@ -303,6 +302,9 @@
         </div>
       </div>
     </main>
+
+    <!-- FOOTER -->
+
     <footer class="bg-dark bg-gradient sticky-bottom bg-opacity-50">
       <div class="container-fluid">
         <div
@@ -315,24 +317,22 @@
               <div class="col-md-4 d-none d-lg-block justify-content-center">
                 <img
                   src="https://api.deezer.com/album/9410086/image"
-                  class="rounded-3"
-                  width="80"
+                  class="w-100"
                   id="footer-track-img"
                 />
               </div>
               <div class="col-md-6" id="">
                 <p
-                  class="fw-bold text-white-50 small mb-1 text-center d-inline"
+                  class="fw-bold text-white-50 small mb-1"
                   id="footer-track-name"
                 >
-                  Highway to Hell
+                  Highway to Hell <i class="d-md-none far fa-heart ps-2"></i>
+                  <i class="d-md-none fas fa-play ps-4"></i>
                 </p>
-                <i class="d-md-none far fa-heart ps-2"></i>
-                <i class="d-md-none fas fa-play ps-4"></i>
                 <p class="d-none" id="footer-artist-name">AC/DC</p>
 
                 <p
-                  class="d-none d-md-block small text-white-50 mb-1 text-center"
+                  class="d-none d-md-block small text-white-50 mb-1"
                   id="artist-name2"
                 >
                   System of a Down
@@ -478,8 +478,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <audio id="audioPlayer"></audio>
-    <script src="../JS/artistpage.js"></script>
+    <script src="/assets/JS/profile.js"></script>
+    <script src="../JS/common.js"></script>
     <script src="../JS/heart.js"></script>
   </body>
 </html>

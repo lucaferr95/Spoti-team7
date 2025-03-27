@@ -46,3 +46,22 @@ const displayPlaylist = (data) => {
   `;
 };
 */
+
+// Funzione per aggiornare l'immagine e il nome nel bottone
+
+function changeAccount(img) {
+  // Cambia solo l'immagine del bottone principale
+  document.getElementById("account-image").src = img;
+
+  // Salva l'immagine nella sessione per mantenerla dopo il refresh
+  sessionStorage.setItem("selectedAccountImage", img);
+}
+
+// Mantieni l'immagine selezionata anche dopo il refresh
+document.addEventListener("DOMContentLoaded", function () {
+  const savedImg = sessionStorage.getItem("selectedAccountImage");
+
+  if (savedImg) {
+    document.getElementById("account-image").src = savedImg;
+  }
+});
