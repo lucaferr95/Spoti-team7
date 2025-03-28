@@ -1,7 +1,10 @@
 const UrlParams = new URLSearchParams(window.location.search);
 const artistId = UrlParams.get('id');
 const apiUrl = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`;
-
+const spinner1 = document.getElementById('spinnerTrack');
+const hideSpinnerTrack = function () {
+  spinner1.style.display = 'none';
+};
 // Funzione per formattare la durata in minuti:secondi
 function formatDuration(durationInSeconds) {
   const minutes = Math.floor(durationInSeconds / 60);
@@ -58,6 +61,7 @@ fetch(apiUrl)
   })
   .then((response) => response.json())
   .then((data) => {
+    hideSpinnerTrack();
     const trackDiv = document.getElementById('trackDiv');
     const showMoreBtn = document.getElementById('showMoreBtn');
     let showAll = false;
