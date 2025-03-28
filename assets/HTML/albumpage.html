@@ -46,6 +46,46 @@
       .album-title:hover {
         animation-play-state: paused;
       }
+      .animated-text {
+        font-size: 2rem;
+        font-weight: bold;
+        background-image: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          cyan,
+          blue,
+          violet
+        );
+        background-size: 400%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: colorShift 5s linear infinite, moveText 10s linear infinite;
+      }
+
+      @keyframes colorShift {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 400%;
+        }
+      }
+
+      @keyframes moveText {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(20px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
 
       @keyframes album-title {
         0% {
