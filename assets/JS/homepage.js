@@ -59,7 +59,7 @@ const getAlbum = function (id) {
       const hrefAlbumIdFooter = document.getElementById('href-album-name-footer')
       const hrefArtistIdFooter = document.getElementById('href-artist-name-footer')
       
-      footerImg.src = album.cover_big
+      footerImg.src = album.cover
       songName.innerText = album.tracks.data[0].title  
       artistName.innerText = album.tracks.data[0].artist.name
       hrefAlbumIdFooter.href = `albumpage.html?id=${album.id}`
