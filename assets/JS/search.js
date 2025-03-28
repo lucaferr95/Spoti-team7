@@ -1,67 +1,67 @@
-const searchAPI = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
-let allResults = []
-let showingAll = false
+const searchAPI = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=';
+let allResults = [];
+let showingAll = false;
 
 // Recupera eventuali risultati salvati nel LocalStorage
-document.addEventListener("DOMContentLoaded", () => {
-  const savedResults = localStorage.getItem("searchResults")
+document.addEventListener('DOMContentLoaded', () => {
+  const savedResults = localStorage.getItem('searchResults');
   if (savedResults) {
-    allResults = JSON.parse(savedResults)
-    displayResults()
-    document.getElementById("show-more").style.display =
-      allResults.length > 6 ? "block" : "none"
+    allResults = JSON.parse(savedResults);
+    displayResults();
+    document.getElementById('show-more').style.display =
+      allResults.length > 6 ? 'block' : 'none';
   }
-})
+});
 
-document.getElementById("searchButton").addEventListener("click", function () {
-  let query = document.getElementById("searchInput").value.trim()
+document.getElementById('searchButton').addEventListener('click', function () {
+  let query = document.getElementById('searchInput').value.trim();
 
   if (!query) {
-    alert("Inserisci un nome di artista o album!")
-    return
+    alert('Inserisci un nome di artista o album!');
+    return;
   }
 
-  query = encodeURIComponent(query)
+  query = encodeURIComponent(query);
 
-  document.getElementById("results").innerHTML = `
+  document.getElementById('results').innerHTML = `
     <div class="d-flex justify-content-center">
-      <div class="spinner-border text-success" role="status">
+      <div class="spinner-border green-heart" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
-    </div>`
+    </div>`;
 
   fetch(searchAPI + query)
     .then((response) => {
-      if (!response.ok) throw new Error("Errore nella ricerca")
-      return response.json()
+      if (!response.ok) throw new Error('Errore nella ricerca');
+      return response.json();
     })
     .then((data) => {
       if (data && data.data.length > 0) {
-        allResults = data.data
-        localStorage.setItem("searchResults", JSON.stringify(allResults)) // Salva nel LocalStorage
-        showingAll = false
-        displayResults()
-        document.getElementById("show-more").style.display = "block"
+        allResults = data.data;
+        localStorage.setItem('searchResults', JSON.stringify(allResults)); // Salva nel LocalStorage
+        showingAll = false;
+        displayResults();
+        document.getElementById('show-more').style.display = 'block';
       } else {
-        document.getElementById("results").innerHTML =
-          "<p class='text-center text-danger'>Nessun risultato trovato.</p>"
-        document.getElementById("show-more").style.display = "none"
+        document.getElementById('results').innerHTML =
+          "<p class='text-center text-danger'>Nessun risultato trovato.</p>";
+        document.getElementById('show-more').style.display = 'none';
       }
     })
     .catch((error) => {
-      console.error("Errore nella ricerca:", error)
-      document.getElementById("results").innerHTML =
-        "<p class='text-center text-danger'>Errore nella ricerca.</p>"
-      document.getElementById("show-more").style.display = "none"
-    })
-})
+      console.error('Errore nella ricerca:', error);
+      document.getElementById('results').innerHTML =
+        "<p class='text-center text-danger'>Errore nella ricerca.</p>";
+      document.getElementById('show-more').style.display = 'none';
+    });
+});
 
 // Funzione per mostrare i risultati
 function displayResults() {
-  const resultsDiv = document.getElementById("results")
-  resultsDiv.innerHTML = ""
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
 
-  const resultsToShow = showingAll ? allResults : allResults.slice(0, 6)
+  const resultsToShow = showingAll ? allResults : allResults.slice(0, 6);
 
   resultsToShow.forEach((item) => {
     resultsDiv.innerHTML += `
@@ -76,27 +76,27 @@ function displayResults() {
           </div>
         </div>
       </div>
-    `
-  })
+    `;
+  });
 
-  document.getElementById("show-more").innerHTML = `
+  document.getElementById('show-more').innerHTML = `
     <p class="text-white-50 small fw-bold">
-      <small>${showingAll ? "MOSTRA MENO" : "VISUALIZZA TUTTO"}</small>
+      <small>${showingAll ? 'MOSTRA MENO' : 'VISUALIZZA TUTTO'}</small>
     </p>
-    `
+    `;
 }
 
 // Pulsante "Mostra di più / Mostra meno"
-document.getElementById("show-more").addEventListener("click", function () {
-  showingAll = !showingAll
-  displayResults()
-})
+document.getElementById('show-more').addEventListener('click', function () {
+  showingAll = !showingAll;
+  displayResults();
+});
 
 // Pulsante per resettare la ricerca
-document.getElementById("resetButton").addEventListener("click", function () {
-  localStorage.removeItem("searchResults")
-  allResults = []
-  document.getElementById("results").innerHTML =
-    "<h3 class='text-center text-success fs-5'>Ricerca resettata. Fai una nuova ricerca</h3>"
-  document.getElementById("show-more").style.display = "none"
-})
+document.getElementById('resetButton').addEventListener('click', function () {
+  localStorage.removeItem('searchResults');
+  allResults = [];
+  document.getElementById('results').innerHTML =
+    "<h3 class='text-center text-success fs-5'>Ricerca resettata. Fai una nuova ricerca</h3>";
+  document.getElementById('show-more').style.display = 'none';
+});
