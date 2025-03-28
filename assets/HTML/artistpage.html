@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>ARTIST PAGE</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,6 +18,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../css/artistpage.css" />
+    <link rel="stylesheet" href="../css/heart.css" />
   </head>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
     <main class="flex-grow-1">
@@ -160,7 +161,7 @@
               </div>
             </div>
             <!--div con tracce-->
-            <div class="px-3 py-2">
+            <div class="px-3 py-2 bg-black">
               <!--div bottoni-->
               <div id="buttons" class="mb-2">
                 <button
@@ -314,22 +315,24 @@
               <div class="col-md-4 d-none d-lg-block justify-content-center">
                 <img
                   src="https://api.deezer.com/album/9410086/image"
-                  class="w-100"
+                  class="rounded-3"
+                  width="80"
                   id="footer-track-img"
                 />
               </div>
               <div class="col-md-6" id="">
                 <p
-                  class="fw-bold text-white-50 small mb-1"
+                  class="fw-bold text-white-50 small mb-1 text-center d-inline"
                   id="footer-track-name"
                 >
-                  Highway to Hell <i class="d-md-none far fa-heart ps-2"></i>
-                  <i class="d-md-none fas fa-play ps-4"></i>
+                  Highway to Hell
                 </p>
+                <i class="d-md-none far fa-heart ps-2"></i>
+                <i class="d-md-none fas fa-play ps-4"></i>
                 <p class="d-none" id="footer-artist-name">AC/DC</p>
 
                 <p
-                  class="d-none d-md-block small text-white-50 mb-1"
+                  class="d-none d-md-block small text-white-50 mb-1 text-center"
                   id="artist-name2"
                 >
                   System of a Down
@@ -346,11 +349,11 @@
           >
             <div class="row justify-content-center text-center">
               <div class="col-12 gap-0 column-gap-3 pb-2">
-                <i class="fas fa-random text-success"></i>
+                <i class="fas fa-random green-heart"></i>
                 <i class="fas fa-step-backward"></i>
                 <i class="fas fa-play-circle"></i>
                 <i class="fas fa-step-forward"></i>
-                <i class="fas fa-redo-alt text-success"></i>
+                <i class="fas fa-redo-alt green-heart"></i>
               </div>
             </div>
             <div
@@ -477,5 +480,6 @@
     ></script>
     <audio id="audioPlayer"></audio>
     <script src="../JS/artistpage.js"></script>
+    <script src="../JS/heart.js"></script>
   </body>
 </html>
