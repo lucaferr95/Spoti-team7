@@ -17,23 +17,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="../css/searchpage.css" />
     <link rel="stylesheet" href="../css/heart.css" />
-    <style>
-      .altezza-div {
-        height: 500px;
-      }
-
-      #show-more {
-        display: none;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
     <main class="flex-grow-1">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-6 col-md-3 col-lg-2 small">
+          <div class="d-none d-md-block col-md-3 col-lg-2 small">
             <nav
               class="nav flex-column d-none d-sm-block border-bottom border-1 small"
             >
@@ -221,8 +212,6 @@
                 <h2 class="fs-3 pt-2 px-3 pb-3 text-center">
                   Cerca e trova tra album ed artisti!
                 </h2>
-
-                <!--fine test-->
               </div>
             </div>
 
@@ -239,6 +228,7 @@
                     placeholder="Cerca"
                     aria-label="Cerca"
                     aria-describedby="button-addon2"
+                    required
                   />
                   <button
                     class="btn btn-sm btn-outline-secondary"
@@ -246,6 +236,14 @@
                     id="searchButton"
                   >
                     <i class="fas fa-search text-white"></i>
+                  </button>
+                </div>
+                <div class="col-10 col-md-10 col-lg-8">
+                  <button
+                    id="resetButton"
+                    class="btn btn-outline-danger mt-3 ms-3"
+                  >
+                    Reset Ricerca
                   </button>
                 </div>
               </div>
@@ -259,86 +257,223 @@
               </div>
               <div class="row bg-dark mt-4" id="results"></div>
             </div>
-          </div>
-
-          <!--fine col centrale-->
-          <div class="d-none d-sm-block col-12 col-md-3 pt-3 col-lg-2 small">
-            <div class="row">
-              <div class="d-flex justify-content-between">
-                <h6 class="text-white">Attività amici</h6>
-                <div class="icon">
-                  <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
-                  <i class="fas fa-times fs-5"></i>
+            <div class="col pt-4">
+              <h3 class="fs-4 text-center">Sfoglia tutto</h3>
+              <div
+                class="row row-cols-2 row-cols-md-2 row-cols-xxl-4 g-3 mx-3 pt-3"
+              >
+                <div class="col">
+                  <div
+                    class="card first text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-5 pb-lg-5 fs-5">
+                        Podcast
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-2.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row pt-5 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
+                <div class="col">
+                  <div
+                    class="card second text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-4 pb-lg-5 fs-5">
+                        Create per te
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-42.png"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
+                <div class="col">
+                  <div
+                    class="card third text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-4 pb-lg-5 fs-5">
+                        Nuove uscite
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-26.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
+                <div class="col">
+                  <div
+                    class="card fourth text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-5 pb-lg-5 fs-5">Pop</h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-47.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row pt-4 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
+                <div class="col">
+                  <div
+                    class="card fifth text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-5 pb-lg-5 fs-5">
+                        Hip Hop
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-49.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
+                <div class="col">
+                  <div
+                    class="card first text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-4 pb-md-4 pb-lg-5 fs-5">
+                        Dance/ Elettronica
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-4.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
+                <div class="col">
+                  <div
+                    class="card seventh text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-5 pb-lg-5 fs-5">
+                        Latina
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-5.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row pt-4 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
+                <div class="col">
+                  <div
+                    class="card eighth text-white pb-5 pb-md-2 pb-lg-5 mb-3 overposition"
+                  >
+                    <div class="card-body">
+                      <h5 class="card-title pb-5 pb-md-5 pb-lg-5 fs-5">
+                        Classifiche
+                      </h5>
+                      <p class="card-text text-end pb-lg-5">
+                        <img
+                          src="../imgs/search/image-14.jpg"
+                          class="w-50 rounded-4 rotate"
+                        />
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+<!--col di destra-->
+<div class="d-none d-md-block col-md-3 pt-3 col-lg-2 small">
+  <div class="row justify-content-center">
+    <div class="d-flex justify-content-between">
+      <h6 class="text-white">Attività amici</h6>
+      <div class="icon">
+        <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
+        <i class="fas fa-times fs-5"></i>
+      </div>
+    </div>
+    <div class="row pt-5 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-1.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">Raphael Hope</p>
+        <p class="small text-white-50 mb-1">
+          Final Act &#183; Borislav Slavov
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> House of Hope
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">4 ore</p>
+      </div>
+    </div>
+    <div class="row pt-4 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-4.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">
+          Geralt of Rivia
+        </p>
+        <p class="small text-white-50 mb-1">
+          Toss a coin to your witcher &#183; Violet Orlandi
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> Fallen
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">1 ora</p>
+      </div>
+    </div>
+    <div class="row pt-4 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-3.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">Peter Dinklage</p>
+        <p class="small text-white-50 mb-1">
+          Rains of Castamere &#183; Ramin Djawadi
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> EP I
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">2 ore</p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </main>
@@ -351,21 +486,24 @@
             class="col-12 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start"
           >
             <div class="row pt-2 pe-0 align-items-center">
-              <div class="col-md-4 d-none d-lg-block justify-content-center">
+              <div
+                class="col-md-4 p-0 ps-1 d-none d-lg-block justify-content-center"
+              >
                 <img
                   src="https://api.deezer.com/album/9410086/image"
-                  class="w-100"
+                  class="rounded-3 w-100"
                   id="footer-track-img"
                 />
               </div>
-              <div class="col-md-6" id="">
+              <div class="col-md-6 p-0 ps-2" id="">
                 <p
-                  class="fw-bold text-white-50 small mb-1"
+                  class="fw-bold text-white-50 small mb-1 text-center d-inline"
                   id="footer-track-name"
                 >
-                  Highway to Hell <i class="d-md-none far fa-heart ps-2"></i>
-                  <i class="d-md-none fas fa-play ps-4"></i>
+                  Highway to Hell
                 </p>
+                <i class="d-md-none far fa-heart ps-2"></i>
+                <i class="d-md-none fas fa-play ps-4"></i>
                 <p class="d-none" id="footer-artist-name">AC/DC</p>
 
                 <p
@@ -375,7 +513,7 @@
                   System of a Down
                 </p>
               </div>
-              <div class="col-md-2 d-none d-md-block pe-0 align-content-center">
+              <div class="col-md-2 d-none d-md-block p-0 align-content-center">
                 <i class="far fa-heart ps-2"></i>
               </div>
             </div>
@@ -459,7 +597,7 @@
           class="d-md-none row justify-content-center bg-dark bg-opacity-75 pt-3"
         >
           <div class="col-4 text-center">
-            <i class="fas fa-home text-white pe-2 fs-4"></i>
+            <i class="fas fa-home text-white fs-4"></i>
             <small
               ><a
                 class="nav-link active text-white"
@@ -471,12 +609,12 @@
             >
           </div>
           <div class="col-4 text-center">
-            <i class="fas fa-search text-white-50 pe-2 fs-4"></i>
+            <i class="fas fa-search text-white-50 fs-4"></i>
             <small
               ><a
                 class="nav-link active text-white-50"
                 aria-current="page"
-                href="./homepage.html"
+                href="./search.html"
               >
                 Cerca</a
               ></small

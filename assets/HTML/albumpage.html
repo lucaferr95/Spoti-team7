@@ -46,6 +46,46 @@
       .album-title:hover {
         animation-play-state: paused;
       }
+      .animated-text {
+        font-size: 2rem;
+        font-weight: bold;
+        background-image: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          cyan,
+          blue,
+          violet
+        );
+        background-size: 400%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: colorShift 5s linear infinite, moveText 10s linear infinite;
+      }
+
+      @keyframes colorShift {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 400%;
+        }
+      }
+
+      @keyframes moveText {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(20px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
 
       @keyframes album-title {
         0% {
@@ -63,7 +103,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- ASIDE SINISTRA -->
-          <div class="col-6 col-md-3 col-lg-2 small">
+          <div class="d-none d-md-block col-md-3 col-lg-2 small">
             <nav
               class="nav flex-column d-none d-sm-block border-bottom border-1 small"
             >
@@ -158,84 +198,80 @@
             <div id="displayAlbum" class="container"></div>
           </div>
 
-          <!--ASIDE DESTRA-->
-          <div class="col-12 col-md-3 pt-3 col-lg-2 small">
-            <div class="row">
-              <div class="d-flex justify-content-between">
-                <h6 class="text-white">Attività amici</h6>
-                <div class="icon">
-                  <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
-                  <i class="fas fa-times fs-5"></i>
-                </div>
-              </div>
-              <div class="row pt-5 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-              </div>
-              <div class="row pt-4 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-              </div>
-              <div class="row pt-4 pe-0">
-                <div class="col-md-3">
-                  <img
-                    src="../imgs/main/image-1.jpg"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p class="fw-bold text-white-50 small mb-1">
-                    Charlie Hookham
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    In camera &#183; Yumi Zouma
-                  </p>
-                  <p class="small text-white-50 mb-1">
-                    <i class="far fa-dot-circle"></i> EP III
-                  </p>
-                </div>
-                <div class="col-md-3 pe-0">
-                  <p class="small text-end text-white-50">4 ore</p>
-                </div>
-              </div>
-            </div>
-          </div>
+<!--col di destra-->
+<div class="d-none d-md-block col-md-3 pt-3 col-lg-2 small">
+  <div class="row justify-content-center">
+    <div class="d-flex justify-content-between">
+      <h6 class="text-white">Attività amici</h6>
+      <div class="icon">
+        <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
+        <i class="fas fa-times fs-5"></i>
+      </div>
+    </div>
+    <div class="row pt-5 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-1.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">Raphael Hope</p>
+        <p class="small text-white-50 mb-1">
+          Final Act &#183; Borislav Slavov
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> House of Hope
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">4 ore</p>
+      </div>
+    </div>
+    <div class="row pt-4 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-4.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">
+          Geralt of Rivia
+        </p>
+        <p class="small text-white-50 mb-1">
+          Toss a coin to your witcher &#183; Violet Orlandi
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> Fallen
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">1 ora</p>
+      </div>
+    </div>
+    <div class="row pt-4 ps-1 pe-1">
+      <div class="col-md-2 p-0 pe-1">
+        <img
+          src="../imgs/main/image-3.jpg"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+      <div class="col-md-7 p-0 ps-1">
+        <p class="fw-bold text-white-50 small mb-1">Peter Dinklage</p>
+        <p class="small text-white-50 mb-1">
+          Rains of Castamere &#183; Ramin Djawadi
+        </p>
+        <p class="small text-white-50 mb-1">
+          <i class="far fa-dot-circle"></i> EP I
+        </p>
+      </div>
+      <div class="col-md-3 p-0">
+        <p class="small text-end text-white-50">2 ore</p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </main>
@@ -248,29 +284,34 @@
             class="col-12 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start"
           >
             <div class="row pt-2 pe-0 align-items-center">
-              <div class="col-md-4 d-none d-lg-block justify-content-center">
+              <div
+                class="col-md-4 p-0 ps-1 d-none d-lg-block justify-content-center"
+              >
                 <img
-                  src=""
-                  class="rounded-3"
-                  width="45"
+                  src="https://api.deezer.com/album/9410086/image"
+                  class="rounded-3 w-100"
                   id="footer-track-image"
                 />
               </div>
-              <div class="col-md-6" id="">
+              <div class="col-md-6 p-0 ps-2" id="">
                 <p
                   class="fw-bold text-white-50 small mb-1 text-center d-inline"
                   id="footer-track-name"
-                ></p>
+                >
+                  Highway to Hell
+                </p>
                 <i class="d-md-none far fa-heart ps-2"></i>
                 <i class="d-md-none fas fa-play ps-4"></i>
-                <p class="d-none" id="artist-name2">AC/DC</p>
+                <p class="d-none" id="footer-artist-name">AC/DC</p>
 
                 <p
-                  class="d-none d-md-block small text-white-50 mb-1 text-center"
-                  id="footer-artist-name"
-                ></p>
+                  class="d-none d-md-block small text-white-50 mb-1"
+                  id="artist-name2"
+                >
+                  System of a Down
+                </p>
               </div>
-              <div class="col-md-2 d-none d-md-block pe-0 align-content-center">
+              <div class="col-md-2 d-none d-md-block p-0 align-content-center">
                 <i class="far fa-heart ps-2"></i>
               </div>
             </div>
@@ -354,7 +395,7 @@
           class="d-md-none row justify-content-center bg-dark bg-opacity-75 pt-3"
         >
           <div class="col-4 text-center">
-            <i class="fas fa-home text-white pe-2 fs-4"></i>
+            <i class="fas fa-home text-white fs-4"></i>
             <small
               ><a
                 class="nav-link active text-white"
@@ -366,12 +407,12 @@
             >
           </div>
           <div class="col-4 text-center">
-            <i class="fas fa-search text-white-50 pe-2 fs-4"></i>
+            <i class="fas fa-search text-white-50 fs-4"></i>
             <small
               ><a
                 class="nav-link active text-white-50"
                 aria-current="page"
-                href="./homepage.html"
+                href="./search.html"
               >
                 Cerca</a
               ></small

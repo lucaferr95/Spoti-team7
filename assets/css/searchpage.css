@@ -1,0 +1,48 @@
+.altezza-div {
+  height: 500px;
+}
+
+#show-more {
+  display: none;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(24deg);
+  position: absolute;
+  bottom: -13px;
+  right: -20px;
+}
+
+.overposition {
+  position: relative;
+  overflow: hidden;
+}
+
+.first {
+  background-color: #e13300;
+}
+
+.second {
+  background-color: #1e3264;
+}
+
+.third {
+  background-color: #e8125c;
+}
+
+.fourth {
+  background-color: #158a08;
+}
+
+.fifth {
+  background-color: #bc5800;
+}
+
+.seventh {
+  background-color: #e1118b;
+}
+
+.eighth {
+  background-color: #8e66aa;
+}
