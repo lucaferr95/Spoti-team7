@@ -22,6 +22,12 @@
       .altezza-div {
         height: 500px;
       }
+      .profile-img {
+        width: 40px !important;
+        height: 40px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+      }
     </style>
   </head>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
@@ -126,16 +132,15 @@
                   <!-- Bottone principale con l'account selezionato -->
                   <button
                     id="account-button"
-                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill d-flex align-items-center"
+                    class="btn btn-sm bg-black bg-gradient bg-opacity-75 text-white dropdown-toggle rounded-pill d-flex align-items-center"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <img
                       id="account-image"
-                      width="30"
                       src="/IMG_20241012_115436_809.jpg"
-                      class="rounded-circle me-2"
+                      class="profile-img me-2"
                     />
                     <span>Il tuo account</span>
                   </button>
@@ -153,8 +158,7 @@
                       >
                         <img
                           src="/IMG_20241012_115436_809.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Lord Leo
                       </a>
@@ -167,8 +171,7 @@
                       >
                         <img
                           src="/IMG-20250327-WA0041.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Miss Lilla
                       </a>
@@ -181,8 +184,7 @@
                       >
                         <img
                           src="/IMG-20250327-WA0008.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Lord Teo
                       </a>
@@ -195,10 +197,32 @@
                       >
                         <img
                           src="/IMG-20250327-WA0048.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Miss Mimi
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilestiwe.html"
+                        onclick="changeAccount('/IMG-20250328-WA0004(1).jpg')"
+                      >
+                        <img
+                          src="/IMG-20250328-WA0004(1).jpg"
+                          class="profile-img me-2"
+                        />
+                        Prince Stiwe
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profileminnie.html"
+                        onclick="changeAccount('/minnie.jpg')"
+                      >
+                        <img src="/minnie.jpg" class="profile-img me-2" />
+                        Bat Minnie
                       </a>
                     </li>
                   </ul>
@@ -207,7 +231,7 @@
             </div>
             <div class="row bg-black bg-gradient m-1 justify-content-center">
               <div class="col-12 col-md-3 align-content-start text-center py-3">
-                <img id="img-album" src="" class="img-fluid" />
+                <img id="img-album" src="" class="img-fluid me-2" />
               </div>
               <div class="col-12 col-md-6 small">
                 <p class="small pt-1 mb-2">ALBUM</p>
@@ -251,40 +275,25 @@
               </div>
             </div>
             <h2 class="fs-4">Buonasera</h2>
-            <div class="row row-cols-2 row-cols-lg-2 g-3 justify-content-between">
-
+            <div
+              class="row row-cols-2 row-cols-lg-2 g-3 justify-content-between"
+            >
               <div class="col justify-content-center">
                 <div class="card mb-3 bg-dark bg-gradient border-0">
                   <div class="row g-0">
                     <div class="col-4 p-0">
                       <img
-                      src="../imgs/main/image-19.jpg"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-                  <div class="col-8 small align-content-center text-white px-3">
-                    <p>
-                      <small>early stage emily syndrome</small>
-                    </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card mb-3 bg-dark bg-gradient border-0">
-                  <div class="row g-0">
-                    <div class="col-4 p-0">
-                      <img
-                      src="../imgs/main/image-13.jpg"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-                  <div class="col-8 small align-content-center text-white px-3">
-                    <p>
-                      <small>Be The Young</small>
-                    </p>
-                  </div>
+                        src="../imgs/main/image-19.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small>early stage emily syndrome</small>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -294,33 +303,17 @@
                   <div class="row g-0">
                     <div class="col-4 p-0">
                       <img
-                      src="../imgs/main/image-15.jpg"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-                  <div class="col-8 small align-content-center text-white px-3">
-                    <p>
-                      <small>saggio vibes &#128131; &#129430; &#127870;</small>
-                    </p>
-                  </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card mb-3 bg-dark bg-gradient border-0">
-                  <div class="row g-0">
-                    <div class="col-4 p-0">
-                      <img
-                      src="../imgs/main/image-16.jpg"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-                  <div class="col-8 small align-content-center text-white px-3">
-                    <p>
-                      <small>Brani che ti piacciono</small>
-                    </p>
-                  </div>
+                        src="../imgs/main/image-13.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small>Be The Young</small>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -330,41 +323,83 @@
                   <div class="row g-0">
                     <div class="col-4 p-0">
                       <img
-                      src="../imgs/main/image-11.jpg"
-                      class="img-fluid rounded"
-                    />
-                  </div>
-                  <div class="col-8 small align-content-center text-white px-3">
-                    <p>
-                      <small>2021 lol</small>
-                    </p>
-                  </div>
+                        src="../imgs/main/image-15.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small
+                          >saggio vibes &#128131; &#129430; &#127870;</small
+                        >
+                      </p>
+                    </div>
                   </div>
                 </div>
-               </div>
-
-               <div class="col">
-                 <div class="card mb-3 bg-dark bg-gradient border-0">
-                   <div class="row g-0">
-                     <div class="col-4 p-0">
-                       <img
-                       src="../imgs/main/image-14.jpg"
-                       class="img-fluid rounded"
-                     />
-                   </div>
-                   <div class="col-8 small align-content-center text-white px-3">
-                     <p>
-                       <small>Deep Dive with Ali Abdaal</small>
-                     </p>
-                   </div>
-                   </div>
-                 </div>
-               
- 
-               </div>
-               
-
               </div>
+
+              <div class="col">
+                <div class="card mb-3 bg-dark bg-gradient border-0">
+                  <div class="row g-0">
+                    <div class="col-4 p-0">
+                      <img
+                        src="../imgs/main/image-16.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small>Brani che ti piacciono</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card mb-3 bg-dark bg-gradient border-0">
+                  <div class="row g-0">
+                    <div class="col-4 p-0">
+                      <img
+                        src="../imgs/main/image-11.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small>2021 lol</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card mb-3 bg-dark bg-gradient border-0">
+                  <div class="row g-0">
+                    <div class="col-4 p-0">
+                      <img
+                        src="../imgs/main/image-14.jpg"
+                        class="img-fluid rounded"
+                      />
+                    </div>
+                    <div
+                      class="col-8 small align-content-center text-white px-3"
+                    >
+                      <p>
+                        <small>Deep Dive with Ali Abdaal</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="row px-1 pt-3 justify-content-start g-2">
               <div class="col-6">
@@ -636,7 +671,7 @@
               ></path>
             </svg>
             <small
-              ><a class="nav-link text-white-50" href="profile.html"
+              ><a class="nav-link text-white-50" href="#"
                 >La tua libreria
               </a></small
             >

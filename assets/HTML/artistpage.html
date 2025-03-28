@@ -20,6 +20,14 @@
     <link rel="stylesheet" href="../css/artistpage.css" />
     <link rel="stylesheet" href="../css/heart.css" />
   </head>
+  <style>
+    .profile-img {
+      width: 40px !important;
+      height: 40px !important;
+      object-fit: cover !important;
+      border-radius: 50% !important;
+    }
+  </style>
   <body class="bg-black text-white min-vh-100 d-flex flex-column">
     <main class="flex-grow-1">
       <div class="container-fluid">
@@ -133,16 +141,15 @@
                   <!-- Bottone principale con l'account selezionato -->
                   <button
                     id="account-button"
-                    class="btn btn-sm bg-black text-white dropdown-toggle rounded-pill d-flex align-items-center"
+                    class="btn btn-sm bg-black bg-gradient bg-opacity-75 text-white dropdown-toggle rounded-pill d-flex align-items-center"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     <img
                       id="account-image"
-                      width="30"
                       src="/IMG_20241012_115436_809.jpg"
-                      class="rounded-circle me-2"
+                      class="profile-img me-2"
                     />
                     <span>Il tuo account</span>
                   </button>
@@ -160,8 +167,7 @@
                       >
                         <img
                           src="/IMG_20241012_115436_809.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Lord Leo
                       </a>
@@ -174,8 +180,7 @@
                       >
                         <img
                           src="/IMG-20250327-WA0041.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Miss Lilla
                       </a>
@@ -188,8 +193,7 @@
                       >
                         <img
                           src="/IMG-20250327-WA0008.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Lord Teo
                       </a>
@@ -202,15 +206,39 @@
                       >
                         <img
                           src="/IMG-20250327-WA0048.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                          class="profile-img me-2"
                         />
                         Miss Mimi
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilestiwe.html"
+                        onclick="changeAccount('/IMG-20250328-WA0004(1).jpg')"
+                      >
+                        <img
+                          src="/IMG-20250328-WA0004(1).jpg"
+                          class="profile-img me-2"
+                        />
+                        Prince Stiwe
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profileminnie.html"
+                        onclick="changeAccount('/minnie.jpg')"
+                      >
+                        <img src="/minnie.jpg" class="profile-img me-2" />
+                        Bat Minnie
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
+
               <div class="mt-auto bg-secondary bg-gradient bg-opacity-50">
                 <p class="my-0" id="verified-artist">
                   <i class="fas fa-certificate pe-1"></i>Artista verificato
@@ -281,80 +309,80 @@
               </div>
             </div>
           </div>
-<!--col di destra-->
-<div class="d-none d-md-block col-md-3 pt-3 col-lg-2 small">
-  <div class="row justify-content-center">
-    <div class="d-flex justify-content-between">
-      <h6 class="text-white">Attività amici</h6>
-      <div class="icon">
-        <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
-        <i class="fas fa-times fs-5"></i>
-      </div>
-    </div>
-    <div class="row pt-5 ps-1 pe-1">
-      <div class="col-md-2 p-0 pe-1">
-        <img
-          src="../imgs/main/image-1.jpg"
-          class="img-fluid rounded-circle"
-        />
-      </div>
-      <div class="col-md-7 p-0 ps-1">
-        <p class="fw-bold text-white-50 small mb-1">Raphael Hope</p>
-        <p class="small text-white-50 mb-1">
-          Final Act &#183; Borislav Slavov
-        </p>
-        <p class="small text-white-50 mb-1">
-          <i class="far fa-dot-circle"></i> House of Hope
-        </p>
-      </div>
-      <div class="col-md-3 p-0">
-        <p class="small text-end text-white-50">4 ore</p>
-      </div>
-    </div>
-    <div class="row pt-4 ps-1 pe-1">
-      <div class="col-md-2 p-0 pe-1">
-        <img
-          src="../imgs/main/image-4.jpg"
-          class="img-fluid rounded-circle"
-        />
-      </div>
-      <div class="col-md-7 p-0 ps-1">
-        <p class="fw-bold text-white-50 small mb-1">
-          Geralt of Rivia
-        </p>
-        <p class="small text-white-50 mb-1">
-          Toss a coin to your witcher &#183; Violet Orlandi
-        </p>
-        <p class="small text-white-50 mb-1">
-          <i class="far fa-dot-circle"></i> Fallen
-        </p>
-      </div>
-      <div class="col-md-3 p-0">
-        <p class="small text-end text-white-50">1 ora</p>
-      </div>
-    </div>
-    <div class="row pt-4 ps-1 pe-1">
-      <div class="col-md-2 p-0 pe-1">
-        <img
-          src="../imgs/main/image-3.jpg"
-          class="img-fluid rounded-circle"
-        />
-      </div>
-      <div class="col-md-7 p-0 ps-1">
-        <p class="fw-bold text-white-50 small mb-1">Peter Dinklage</p>
-        <p class="small text-white-50 mb-1">
-          Rains of Castamere &#183; Ramin Djawadi
-        </p>
-        <p class="small text-white-50 mb-1">
-          <i class="far fa-dot-circle"></i> EP I
-        </p>
-      </div>
-      <div class="col-md-3 p-0">
-        <p class="small text-end text-white-50">2 ore</p>
-      </div>
-    </div>
-  </div>
-</div>
+          <!--col di destra-->
+          <div class="d-none d-md-block col-md-3 pt-3 col-lg-2 small">
+            <div class="row justify-content-center">
+              <div class="d-flex justify-content-between">
+                <h6 class="text-white">Attività amici</h6>
+                <div class="icon">
+                  <i class="fas fa-user-plus text-white pe-2 fs-6"></i>
+                  <i class="fas fa-times fs-5"></i>
+                </div>
+              </div>
+              <div class="row pt-5 ps-1 pe-1">
+                <div class="col-md-2 p-0 pe-1">
+                  <img
+                    src="../imgs/main/image-1.jpg"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="col-md-7 p-0 ps-1">
+                  <p class="fw-bold text-white-50 small mb-1">Raphael Hope</p>
+                  <p class="small text-white-50 mb-1">
+                    Final Act &#183; Borislav Slavov
+                  </p>
+                  <p class="small text-white-50 mb-1">
+                    <i class="far fa-dot-circle"></i> House of Hope
+                  </p>
+                </div>
+                <div class="col-md-3 p-0">
+                  <p class="small text-end text-white-50">4 ore</p>
+                </div>
+              </div>
+              <div class="row pt-4 ps-1 pe-1">
+                <div class="col-md-2 p-0 pe-1">
+                  <img
+                    src="../imgs/main/image-4.jpg"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="col-md-7 p-0 ps-1">
+                  <p class="fw-bold text-white-50 small mb-1">
+                    Geralt of Rivia
+                  </p>
+                  <p class="small text-white-50 mb-1">
+                    Toss a coin to your witcher &#183; Violet Orlandi
+                  </p>
+                  <p class="small text-white-50 mb-1">
+                    <i class="far fa-dot-circle"></i> Fallen
+                  </p>
+                </div>
+                <div class="col-md-3 p-0">
+                  <p class="small text-end text-white-50">1 ora</p>
+                </div>
+              </div>
+              <div class="row pt-4 ps-1 pe-1">
+                <div class="col-md-2 p-0 pe-1">
+                  <img
+                    src="../imgs/main/image-3.jpg"
+                    class="img-fluid rounded-circle"
+                  />
+                </div>
+                <div class="col-md-7 p-0 ps-1">
+                  <p class="fw-bold text-white-50 small mb-1">Peter Dinklage</p>
+                  <p class="small text-white-50 mb-1">
+                    Rains of Castamere &#183; Ramin Djawadi
+                  </p>
+                  <p class="small text-white-50 mb-1">
+                    <i class="far fa-dot-circle"></i> EP I
+                  </p>
+                </div>
+                <div class="col-md-3 p-0">
+                  <p class="small text-end text-white-50">2 ore</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -521,7 +549,7 @@
               ></path>
             </svg>
             <small
-              ><a class="nav-link text-white-50" href="profile.html"
+              ><a class="nav-link text-white-50" href="#"
                 >La tua libreria
               </a></small
             >
@@ -536,6 +564,7 @@
     ></script>
     <audio id="audioPlayer"></audio>
     <script src="../JS/artistpage.js"></script>
+    <script src="../JS/profile.js"></script>
     <script src="../JS/heart.js"></script>
   </body>
 </html>

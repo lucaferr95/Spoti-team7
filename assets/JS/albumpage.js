@@ -39,7 +39,8 @@ const displayAlbum = (data) => {
                     >
                       <img
                         id="account-image"
-                        width="30"
+                      width="30"
+                     
                         src="/IMG_20241012_115436_809.jpg"
                         class="rounded-circle me-2"
                       />
@@ -54,13 +55,13 @@ const displayAlbum = (data) => {
                       <li>
                         <a
                           class="dropdown-item"
+
                           href="profileleo.html"
                           onclick="changeAccount('/IMG_20241012_115436_809.jpg')"
                         >
                           <img
                             src="/IMG_20241012_115436_809.jpg"
-                            width="30"
-                            class="rounded-circle me-2"
+                          class="profile-img me-2"
                           />
                           Lord Leo
                         </a>
@@ -73,8 +74,8 @@ const displayAlbum = (data) => {
                         >
                           <img
                             src="/IMG-20250327-WA0041.jpg"
-                            width="30"
-                            class="rounded-circle me-2"
+                          
+                          class="profile-img me-2"
                           />
                           Miss Lilla
                         </a>
@@ -87,8 +88,8 @@ const displayAlbum = (data) => {
                         >
                           <img
                             src="/IMG-20250327-WA0008.jpg"
-                            width="30"
-                            class="rounded-circle me-2"
+                           
+                               class="profile-img me-2"
                           />
                           Lord Teo
                         </a>
@@ -101,10 +102,35 @@ const displayAlbum = (data) => {
                       >
                         <img
                           src="/IMG-20250327-WA0048.jpg"
-                          width="30"
-                          class="rounded-circle me-2"
+                         
+                          class="profile-img me-2"
                         />
                         Miss Mimi
+                      </a>
+                    </li>
+                     <li>
+                      <a
+                        class="dropdown-item"
+                        href="profilestiwe.html"
+                        onclick="changeAccount('/IMG-20250328-WA0004(1).jpg')"
+                      >
+                        <img
+                          src="/IMG-20250328-WA0004(1).jpg"
+                          class="profile-img me-2"
+                         
+                        />
+                        Prince Stiwe
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="profileminnie.html"
+                        onclick="changeAccount('/minnie.jpg')"
+                      >
+                        <img src="/minnie.jpg" class="profile-img me-2" />
+                        
+                        Bat Minnie
                       </a>
                     </li>
                     </ul>
