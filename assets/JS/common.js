@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Controllo che ci siano tracce disponibili
       if (album.tracks && album.tracks.data.length > 0) {
-        document.getElementById("image-footer").src = album.cover_big
+        document.getElementById("image-footer").src = album.cover
         document.getElementById("song-name").innerText =
           album.tracks.data[0].title
         document.getElementById("artist-name").innerText =
