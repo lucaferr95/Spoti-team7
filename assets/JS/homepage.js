@@ -50,7 +50,7 @@ const getAlbum = function (id) {
       
       
       /* FOOTER */
-      // sarebbe carino che pescasse una canzone a caso per album selezionato, per ora ne seleziona una sola
+
       
       
       const footerImg = document.getElementById('image-footer')
@@ -73,13 +73,6 @@ const getAlbum = function (id) {
 }
 getAlbum(randomAlbumSelected) // apre un album a caso pescandolo dall'array
 
-// array possibile con album e songs
-const arrayAlbumsAndSong = [
-    {
-        'album': '9410100',
-        'songs': ['92720036', '92720038', '9410100']
-    }
-]
 
 //quando premi avanti e idietro nel carosello deve cambiare album di nuovo a random
 
