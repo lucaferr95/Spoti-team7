@@ -45,6 +45,7 @@ fetch(apiUrl)
     document.getElementById('artist-name').innerText = artist.name;
     document.getElementById('artist-name1').innerText = artist.name;
     document.getElementById('artist-name2').innerText = artist.name;
+    document.getElementById('img-circle').src = artist.picture_big;
     document.getElementById(
       'artist-background'
     ).style.backgroundImage = `url(${artist.picture_big})`;
